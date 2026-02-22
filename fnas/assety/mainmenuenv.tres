@@ -1,0 +1,15 @@
+[gd_resource type="Environment" format=3 uid="uid://dcdroajb71khn"]
+
+[ext_resource type="Texture2D" uid="uid://cowg5kqmufspx" path="res://assety/textures/qwantani_moonrise_puresky_4k.png" id="1_nl1vj"]
+
+[sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_m2smu"]
+panorama = ExtResource("1_nl1vj")
+energy_multiplier = 0.2
+
+[sub_resource type="Sky" id="Sky_k775i"]
+sky_material = SubResource("PanoramaSkyMaterial_m2smu")
+
+[resource]
+background_mode = 2
+background_energy_multiplier = 0.96
+sky = SubResource("Sky_k775i")

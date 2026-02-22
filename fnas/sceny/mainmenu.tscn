@@ -1,5 +1,26 @@
 [gd_scene format=3 uid="uid://v2lswew3h538"]
 
+[ext_resource type="Texture2D" uid="uid://cfb4ycx8tluhu" path="res://assety/textures/worn_asphalt_ao_2k.jpg" id="1_m8kbx"]
+[ext_resource type="Environment" uid="uid://dcdroajb71khn" path="res://assety/mainmenuenv.tres" id="1_tudpt"]
+[ext_resource type="Texture2D" uid="uid://k2ucl5jj8wlf" path="res://assety/textures/worn_asphalt_nor_gl_2k.png" id="2_bs6s4"]
+[ext_resource type="Texture2D" uid="uid://kt5xahxupe1l" path="res://assety/textures/worn_asphalt_rough_2k.png" id="2_it37i"]
+[ext_resource type="ArrayMesh" uid="uid://sen18sh404db" path="res://assety/school_background.obj" id="5_bs6s4"]
+[ext_resource type="Script" uid="uid://27hqlhv8ejrb" path="res://sceny/spot_light_3d.gd" id="6_6alau"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_bs6s4"]
+albedo_color = Color(0.17846772, 0.17918268, 0.15541753, 1)
+albedo_texture = ExtResource("1_m8kbx")
+roughness = 0.41
+roughness_texture = ExtResource("2_it37i")
+normal_enabled = true
+normal_scale = 1.65
+normal_texture = ExtResource("2_bs6s4")
+
+[sub_resource type="BoxMesh" id="BoxMesh_6vml4"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_6alau"]
+albedo_color = Color(0.22527912, 0.20684192, 0.17095643, 1)
+
 [node name="Control" type="Control" unique_id=640720380]
 layout_mode = 3
 anchors_preset = 15
@@ -8,24 +29,12 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="RichTextLabel" type="RichTextLabel" parent="." unique_id=1118773917]
-layout_mode = 0
-offset_left = 90.0
-offset_top = 62.0
-offset_right = 349.0
-offset_bottom = 351.0
-theme_override_font_sizes/normal_font_size = 48
-text = "Five
-Nights
-At
-Sikodem"
-
 [node name="GridContainer" type="GridContainer" parent="." unique_id=430173205]
 layout_mode = 0
-offset_left = 91.0
-offset_top = 334.0
-offset_right = 292.66
-offset_bottom = 546.08
+offset_left = 71.0
+offset_top = 338.0
+offset_right = 256.0
+offset_bottom = 469.0
 
 [node name="NewGame" type="Button" parent="GridContainer" unique_id=1208847104]
 layout_mode = 2
@@ -38,3 +47,44 @@ text = "Continue - empty"
 [node name="Button" type="Button" parent="GridContainer" unique_id=1539999344]
 layout_mode = 2
 text = "Exit"
+
+[node name="RichTextLabel" type="RichTextLabel" parent="." unique_id=1118773917]
+layout_mode = 0
+offset_left = 66.0
+offset_top = 64.0
+offset_right = 396.0
+offset_bottom = 332.0
+theme_override_font_sizes/normal_font_size = 48
+text = "Five
+Nights
+At
+Sikodem"
+
+[node name="Node3D" type="Node3D" parent="." unique_id=1177685660]
+
+[node name="Camera3D" type="Camera3D" parent="Node3D" unique_id=643303474]
+transform = Transform3D(0.7437714, -0.045261133, 0.6669, 0.016672334, 0.9986507, 0.04918227, -0.6682261, -0.025461588, 0.7435224, 2.7343202, 0.31265354, -0.6040931)
+fov = 65.6
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Node3D" unique_id=521757497]
+transform = Transform3D(13.398091, 0, 0, 0, 1, 0, 0, 0, 13.400781, -2.6423366, -0.7317982, -4.8917885)
+material_override = SubResource("StandardMaterial3D_bs6s4")
+lod_bias = 1.136
+mesh = SubResource("BoxMesh_6vml4")
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="Node3D" unique_id=1141254968]
+environment = ExtResource("1_tudpt")
+
+[node name="SchoolBackground" type="MeshInstance3D" parent="Node3D" unique_id=1033115693]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.4260445, 0.77595687, -7.7477064)
+material_override = SubResource("StandardMaterial3D_6alau")
+mesh = ExtResource("5_bs6s4")
+
+[node name="SpotLight3D" type="SpotLight3D" parent="Node3D" unique_id=1078064712]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.5309417)
+light_color = Color(0.7347495, 0.45410246, 0.18890837, 1)
+light_energy = 1.593
+spot_range = 10.0
+spot_attenuation = 0.47
+spot_angle = 63.55
+script = ExtResource("6_6alau")
