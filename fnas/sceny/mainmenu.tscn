@@ -4,7 +4,6 @@
 [ext_resource type="Environment" uid="uid://dcdroajb71khn" path="res://assety/mainmenuenv.tres" id="1_tudpt"]
 [ext_resource type="Texture2D" uid="uid://k2ucl5jj8wlf" path="res://assety/textures/worn_asphalt_nor_gl_2k.png" id="2_bs6s4"]
 [ext_resource type="Texture2D" uid="uid://kt5xahxupe1l" path="res://assety/textures/worn_asphalt_rough_2k.png" id="2_it37i"]
-[ext_resource type="ArrayMesh" uid="uid://sen18sh404db" path="res://assety/school_background.obj" id="5_bs6s4"]
 [ext_resource type="Script" uid="uid://27hqlhv8ejrb" path="res://sceny/spot_light_3d.gd" id="6_6alau"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_bs6s4"]
@@ -17,9 +16,6 @@ normal_scale = 1.65
 normal_texture = ExtResource("2_bs6s4")
 
 [sub_resource type="BoxMesh" id="BoxMesh_6vml4"]
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_6alau"]
-albedo_color = Color(0.22527912, 0.20684192, 0.17095643, 1)
 
 [node name="Control" type="Control" unique_id=640720380]
 layout_mode = 3
@@ -74,11 +70,6 @@ mesh = SubResource("BoxMesh_6vml4")
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="Node3D" unique_id=1141254968]
 environment = ExtResource("1_tudpt")
-
-[node name="SchoolBackground" type="MeshInstance3D" parent="Node3D" unique_id=1033115693]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.4260445, 0.77595687, -7.7477064)
-material_override = SubResource("StandardMaterial3D_6alau")
-mesh = ExtResource("5_bs6s4")
 
 [node name="SpotLight3D" type="SpotLight3D" parent="Node3D" unique_id=1078064712]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.5309417)

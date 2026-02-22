@@ -29,7 +29,7 @@ material = SubResource("StandardMaterial3D_xv8uw")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.011991024, 0, 0)
 
 [node name="Player" parent="." unique_id=1152790506 instance=ExtResource("1_xv8uw")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.08904, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0041952133, 2.0728433, 0.006547928)
 
 [node name="StaticBody3D3" type="StaticBody3D" parent="." unique_id=1145885799]
 transform = Transform3D(7.966189, 0, 0, 0, 1.2500067, 0, 0, 0, 1.0819868, 2.4406574, 7.34951, -5.518387)
