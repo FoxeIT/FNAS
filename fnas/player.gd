@@ -19,6 +19,9 @@ func _input(event):
 		camera.rotate_x(-event.relative.y * MOUSE_SENSITIVITY)
 		# Ograniczenie patrzenia w górę/dół do 90 stopni (klampowanie)
 		camera.rotation.x = clamp(camera.rotation.x, deg_to_rad(-89), deg_to_rad(89))
+		
+	if event is InputEventMouseButton:
+		Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
 
 func _physics_process(delta: float) -> void:
 	# Wyjście z gry/odblokowanie myszy po ESC
