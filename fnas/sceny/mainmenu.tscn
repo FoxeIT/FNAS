@@ -1,10 +1,17 @@
 [gd_scene format=3 uid="uid://v2lswew3h538"]
 
+[ext_resource type="Theme" uid="uid://cpk5qnd6e0h4v" path="res://assety/mainmenutheme.tres" id="1_6alau"]
 [ext_resource type="Texture2D" uid="uid://cfb4ycx8tluhu" path="res://assety/textures/worn_asphalt_ao_2k.jpg" id="1_m8kbx"]
 [ext_resource type="Environment" uid="uid://dcdroajb71khn" path="res://assety/mainmenuenv.tres" id="1_tudpt"]
 [ext_resource type="Texture2D" uid="uid://k2ucl5jj8wlf" path="res://assety/textures/worn_asphalt_nor_gl_2k.png" id="2_bs6s4"]
 [ext_resource type="Texture2D" uid="uid://kt5xahxupe1l" path="res://assety/textures/worn_asphalt_rough_2k.png" id="2_it37i"]
+[ext_resource type="Texture2D" uid="uid://doq1k5rij0bsl" path="res://assety/textures/photo-static-texture-pattern.png" id="2_ny5vv"]
+[ext_resource type="Script" uid="uid://cbnqdardvm8a8" path="res://sceny/photo_static_texture_pattern.gd" id="3_3haqi"]
 [ext_resource type="Script" uid="uid://27hqlhv8ejrb" path="res://sceny/spot_light_3d.gd" id="6_6alau"]
+[ext_resource type="Texture2D" uid="uid://d2wywpqm5vel6" path="res://addons/kenney_particle_pack/smoke_07.png" id="9_7yfny"]
+[ext_resource type="AudioStream" uid="uid://cly7w45hfj224" path="res://assety/sounds/dragon-studio-fire-sounds-405444.mp3" id="10_d6t2i"]
+[ext_resource type="ArrayMesh" uid="uid://b7i4dpv00y341" path="res://assety/untitled.obj" id="11_2drq2"]
+[ext_resource type="AudioStream" uid="uid://bkivv7r6pdke" path="res://assety/sounds/Lights Out.mp3" id="11_m3br3"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_bs6s4"]
 albedo_color = Color(0.17846772, 0.17918268, 0.15541753, 1)
@@ -12,37 +19,75 @@ albedo_texture = ExtResource("1_m8kbx")
 roughness = 0.41
 roughness_texture = ExtResource("2_it37i")
 normal_enabled = true
-normal_scale = 1.65
+normal_scale = 4.58
 normal_texture = ExtResource("2_bs6s4")
 
 [sub_resource type="BoxMesh" id="BoxMesh_6vml4"]
 
+[sub_resource type="BoxShape3D" id="BoxShape3D_3haqi"]
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_3haqi"]
+emission_shape = 3
+emission_box_extents = Vector3(1.675, 0.68, 0.01)
+direction = Vector3(0, 0.225, -1.685)
+spread = 13.235
+initial_velocity_min = 1.5
+initial_velocity_max = 2.0
+gravity = Vector3(0, 0.69, 0)
+linear_accel_min = -1.0000023
+linear_accel_max = -0.10000224
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_d6t2i"]
+transparency = 1
+shading_mode = 0
+albedo_color = Color(0.25202742, 0.2520277, 0.25202757, 1)
+albedo_texture = ExtResource("9_7yfny")
+billboard_mode = 3
+billboard_keep_scale = true
+particles_anim_h_frames = 1
+particles_anim_v_frames = 1
+particles_anim_loop = false
+
+[sub_resource type="QuadMesh" id="QuadMesh_7yfny"]
+material = SubResource("StandardMaterial3D_d6t2i")
+
 [node name="Control" type="Control" unique_id=640720380]
+layout_direction = 2
 layout_mode = 3
-anchors_preset = 15
-anchor_right = 1.0
+anchors_preset = 9
 anchor_bottom = 1.0
-grow_horizontal = 2
 grow_vertical = 2
+theme = ExtResource("1_6alau")
 
-[node name="GridContainer" type="GridContainer" parent="." unique_id=430173205]
+[node name="PhotoStaticTexturePattern" type="Sprite2D" parent="." unique_id=1959816656]
+modulate = Color(1, 1, 1, 0.13725491)
+position = Vector2(646, 281)
+texture = ExtResource("2_ny5vv")
+script = ExtResource("3_3haqi")
+
+[node name="BoxContainer" type="BoxContainer" parent="." unique_id=760287846]
 layout_mode = 0
-offset_left = 71.0
-offset_top = 338.0
-offset_right = 256.0
-offset_bottom = 469.0
+offset_left = 66.0
+offset_top = 331.0
+offset_right = 299.0
+offset_bottom = 609.0
+vertical = true
 
-[node name="NewGame" type="Button" parent="GridContainer" unique_id=1208847104]
+[node name="NewGame" type="Button" parent="BoxContainer" unique_id=1208847104]
 layout_mode = 2
-text = "New Game"
+text = " New Game"
+alignment = 0
 
-[node name="Continue" type="Button" parent="GridContainer" unique_id=595659104]
+[node name="Continue" type="Button" parent="BoxContainer" unique_id=595659104]
 layout_mode = 2
-text = "Continue - empty"
+disabled = true
+text = " Continue - empty"
+alignment = 0
 
-[node name="Button" type="Button" parent="GridContainer" unique_id=1539999344]
+[node name="Button" type="Button" parent="BoxContainer" unique_id=1539999344]
 layout_mode = 2
-text = "Exit"
+text = " Exit"
+alignment = 0
 
 [node name="RichTextLabel" type="RichTextLabel" parent="." unique_id=1118773917]
 layout_mode = 0
@@ -50,7 +95,6 @@ offset_left = 66.0
 offset_top = 64.0
 offset_right = 396.0
 offset_bottom = 332.0
-theme_override_font_sizes/normal_font_size = 48
 text = "Five
 Nights
 At
@@ -61,12 +105,22 @@ Sikodem"
 [node name="Camera3D" type="Camera3D" parent="Node3D" unique_id=643303474]
 transform = Transform3D(0.7437714, -0.045261133, 0.6669, 0.016672334, 0.9986507, 0.04918227, -0.6682261, -0.025461588, 0.7435224, 2.7343202, 0.31265354, -0.6040931)
 fov = 65.6
+far = 135.7
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="Node3D" unique_id=521757497]
+[node name="AudioListener3D" type="AudioListener3D" parent="Node3D/Camera3D" unique_id=2132274045]
+
+[node name="Area3D" type="Area3D" parent="Node3D" unique_id=1767504022]
 transform = Transform3D(13.398091, 0, 0, 0, 1, 0, 0, 0, 13.400781, -2.6423366, -0.7317982, -4.8917885)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Node3D/Area3D" unique_id=521757497]
+transform = Transform3D(1.0000001, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
 material_override = SubResource("StandardMaterial3D_bs6s4")
 lod_bias = 1.136
 mesh = SubResource("BoxMesh_6vml4")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Node3D/Area3D" unique_id=1165628566]
+transform = Transform3D(1.0000002, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
+shape = SubResource("BoxShape3D_3haqi")
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="Node3D" unique_id=1141254968]
 environment = ExtResource("1_tudpt")
@@ -79,3 +133,28 @@ spot_range = 10.0
 spot_attenuation = 0.47
 spot_angle = 63.55
 script = ExtResource("6_6alau")
+
+[node name="GPUParticles3D" type="GPUParticles3D" parent="Node3D" unique_id=650835345]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.7322254, 0.4155507)
+amount = 200
+lifetime = 8.26
+explosiveness = 0.15
+fixed_fps = 20
+trail_lifetime = 5.75
+process_material = SubResource("ParticleProcessMaterial_3haqi")
+draw_pass_1 = SubResource("QuadMesh_7yfny")
+
+[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="Node3D" unique_id=381181431]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.2079311, 0.5081172)
+stream = ExtResource("10_d6t2i")
+volume_db = -15.437
+autoplay = true
+
+[node name="Untitled" type="MeshInstance3D" parent="Node3D" unique_id=426764887]
+transform = Transform3D(0.024989203, 0, -0.00073467643, 0, 0.025, 0, 0.00073467643, 0, 0.024989203, -6.516106, -0.2375648, -12.737387)
+mesh = ExtResource("11_2drq2")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=727916769]
+stream = ExtResource("11_m3br3")
+volume_db = -5.474
+autoplay = true

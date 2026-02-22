@@ -1,0 +1,16 @@
+[gd_resource type="Theme" format=3 uid="uid://cpk5qnd6e0h4v"]
+
+[ext_resource type="FontFile" uid="uid://dk0avwccxi4sr" path="res://assety/VT323-Regular.ttf" id="1_cxayc"]
+
+[resource]
+Button/colors/font_focus_color = Color(1, 0.34509805, 0.2784314, 1)
+Button/colors/font_hover_color = Color(1, 0.34657717, 0.2800086, 1)
+Button/colors/font_hover_pressed_color = Color(1, 0, 0, 1)
+Button/colors/font_pressed_color = Color(1, 0, 0, 1)
+Button/constants/outline_size = 5
+Button/font_sizes/font_size = 27
+Button/fonts/font = ExtResource("1_cxayc")
+RichTextLabel/colors/selection_color = Color(0.101960786, 0.101960786, 1, 0)
+RichTextLabel/constants/outline_size = 9
+RichTextLabel/font_sizes/normal_font_size = 64
+RichTextLabel/fonts/normal_font = ExtResource("1_cxayc")
