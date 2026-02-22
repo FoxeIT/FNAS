@@ -20,7 +20,9 @@ ambient_light_color = Color(1, 1, 1, 1)
 [node name="JakubTest" type="Node3D" unique_id=1069199480]
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=1416494412]
-transform = Transform3D(0.7390333, -0.57364726, 0.35321194, 0.42905274, 0.805019, 0.40970507, -0.5193685, -0.15123914, 0.8410607, 0, 5.950091, 0)
+transform = Transform3D(0.7390333, -0.5736473, 0.35321194, 0.42905274, 0.805019, 0.40970507, -0.5193685, -0.15123911, 0.8410607, 0, 5.950091, 4.690193)
+light_energy = 0.01
+sky_mode = 1
 
 [node name="CharacterBody3D" parent="." unique_id=1152790506 instance=ExtResource("1_5ihuq")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4, 0)
