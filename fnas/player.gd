@@ -1,7 +1,7 @@
 extends CharacterBody3D
 
-const SPEED = 5.0
-const JUMP_VELOCITY = 4.5
+const SPEED = 7.0
+const JUMP_VELOCITY = 7.0
 const MOUSE_SENSITIVITY = 0.003 # Czułość myszy
 
 @onready var camera = $Camera3D # Pobiera referencję do kamery
