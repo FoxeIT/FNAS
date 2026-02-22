@@ -2,12 +2,21 @@
 
 [ext_resource type="Script" uid="uid://ckg8quqjrw4xs" path="res://player.gd" id="1_xhfnw"]
 
+[sub_resource type="BoxShape3D" id="BoxShape3D_xhfnw"]
+size = Vector3(1, 1.6201172, 1)
+
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_xhfnw"]
-height = 3.0
 
 [node name="CharacterBody3D" type="CharacterBody3D" unique_id=1152790506]
 script = ExtResource("1_xhfnw")
 
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="." unique_id=1767192726]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.4469414, 0)
+shape = SubResource("BoxShape3D_xhfnw")
+
 [node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=976775647]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.033691406, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.0716476, 0)
 shape = SubResource("CapsuleShape3D_xhfnw")
+
+[node name="Camera3D" type="Camera3D" parent="." unique_id=1833594380]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.05044447, 3.4396524, 0)
