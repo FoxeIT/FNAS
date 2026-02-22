@@ -7,6 +7,12 @@ size = Vector3(1, 1.6201172, 1)
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_xhfnw"]
 
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_xhfnw"]
+albedo_color = Color(0.09019608, 1, 1, 1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_xhfnw"]
+material = SubResource("StandardMaterial3D_xhfnw")
+
 [node name="CharacterBody3D" type="CharacterBody3D" unique_id=1152790506]
 script = ExtResource("1_xhfnw")
 
@@ -20,3 +26,10 @@ shape = SubResource("CapsuleShape3D_xhfnw")
 
 [node name="Camera3D" type="Camera3D" parent="." unique_id=1833594380]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.05044447, 3.4396524, 0)
+
+[node name="SpotLight3D" type="SpotLight3D" parent="Camera3D" unique_id=964406229]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.041994438, 0.008941889, 0)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=667114173]
+transform = Transform3D(1, 0, 0, 0, 1.633878, 0, 0, 0, 1, 0, 1.4977052, 0)
+mesh = SubResource("BoxMesh_xhfnw")

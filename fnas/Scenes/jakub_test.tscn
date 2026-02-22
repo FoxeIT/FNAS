@@ -1,0 +1,39 @@
+[gd_scene format=3 uid="uid://b86sp7o2cucu2"]
+
+[ext_resource type="PackedScene" uid="uid://m3uvedbq737d" path="res://Player.tscn" id="1_5ihuq"]
+[ext_resource type="Texture2D" uid="uid://cfbpnfvlo1xs4" path="res://Textures/sikodem.png" id="2_wrfgo"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_5ihuq"]
+size = Vector3(10, 1, 10)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_5ihuq"]
+albedo_texture = ExtResource("2_wrfgo")
+
+[sub_resource type="BoxMesh" id="BoxMesh_wrfgo"]
+lightmap_size_hint = Vector2i(-1, 0)
+material = SubResource("StandardMaterial3D_5ihuq")
+size = Vector3(10, 1, 10)
+
+[sub_resource type="Environment" id="Environment_5ihuq"]
+ambient_light_color = Color(1, 1, 1, 1)
+
+[node name="JakubTest" type="Node3D" unique_id=1069199480]
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=1416494412]
+transform = Transform3D(0.7390333, -0.5736473, 0.35321194, 0.42905274, 0.805019, 0.40970507, -0.5193685, -0.15123911, 0.8410607, 0, 5.950091, 4.690193)
+light_energy = 0.01
+sky_mode = 1
+
+[node name="CharacterBody3D" parent="." unique_id=1152790506 instance=ExtResource("1_5ihuq")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4, 0)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="." unique_id=1391007540]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D" unique_id=1600188332]
+shape = SubResource("BoxShape3D_5ihuq")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="StaticBody3D" unique_id=523758243]
+mesh = SubResource("BoxMesh_wrfgo")
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=1065489393]
+environment = SubResource("Environment_5ihuq")

@@ -1,7 +1,7 @@
 extends CharacterBody3D
 
-const SPEED = 5.0
-const JUMP_VELOCITY = 4.5
+const SPEED = 7.0
+const JUMP_VELOCITY = 7.0
 const MOUSE_SENSITIVITY = 0.003 # Czułość myszy
 
 @onready var camera = $Camera3D # Pobiera referencję do kamery
@@ -19,6 +19,9 @@ func _input(event):
 		camera.rotate_x(-event.relative.y * MOUSE_SENSITIVITY)
 		# Ograniczenie patrzenia w górę/dół do 90 stopni (klampowanie)
 		camera.rotation.x = clamp(camera.rotation.x, deg_to_rad(-89), deg_to_rad(89))
+		
+	if event is InputEventMouseButton:
+		Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
 
 func _physics_process(delta: float) -> void:
 	# Wyjście z gry/odblokowanie myszy po ESC
