@@ -1,0 +1,29 @@
+[gd_scene format=3 uid="uid://dr3j2piclepk5"]
+
+[ext_resource type="PackedScene" uid="uid://dpyulxt25qcfa" path="res://Player.tscn" id="1_xv8uw"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_xv8uw"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_wp7sn"]
+
+[node name="Biggayytest" type="Node3D" unique_id=1647491937]
+
+[node name="Player" parent="." unique_id=1152790506 instance=ExtResource("1_xv8uw")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.08904, 0)
+
+[node name="StaticBody3D2" type="StaticBody3D" parent="." unique_id=781434745]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.7598414, -4.070262)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D2" unique_id=2030877271]
+shape = SubResource("BoxShape3D_xv8uw")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="StaticBody3D2" unique_id=1956062840]
+mesh = SubResource("BoxMesh_wp7sn")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="." unique_id=1541022219]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D" unique_id=847994105]
+shape = SubResource("BoxShape3D_xv8uw")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="StaticBody3D" unique_id=1589038523]
+mesh = SubResource("BoxMesh_wp7sn")
