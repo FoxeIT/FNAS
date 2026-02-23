@@ -2,21 +2,20 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cfbpnfvlo1xs4"
-path.etc2="res://.godot/imported/sikodem.png-8c4534e86352b779b4654439c8a9f2d0.etc2.ctex"
+uid="uid://0g8bxreg2021"
+path="res://.godot/imported/icon.png-75a09dce36124bed1f88f4a9bad319dc.ctex"
 metadata={
-"imported_formats": ["etc2_astc"],
-"vram_texture": true
+"vram_texture": false
 }
 
 [deps]
 
-source_file="res://Textures/sikodem.png"
-dest_files=["res://.godot/imported/sikodem.png-8c4534e86352b779b4654439c8a9f2d0.etc2.ctex"]
+source_file="res://assety/textures/icon.png"
+dest_files=["res://.godot/imported/icon.png-75a09dce36124bed1f88f4a9bad319dc.ctex"]
 
 [params]
 
-compress/mode=2
+compress/mode=0
 compress/high_quality=false
 compress/lossy_quality=0.7
 compress/uastc_level=0
@@ -24,7 +23,7 @@ compress/rdo_quality_loss=0.0
 compress/hdr_compression=1
 compress/normal_map=0
 compress/channel_pack=0
-mipmaps/generate=true
+mipmaps/generate=false
 mipmaps/limit=-1
 roughness/mode=0
 roughness/src_normal=""
@@ -38,4 +37,4 @@ process/normal_map_invert_y=false
 process/hdr_as_srgb=false
 process/hdr_clamp_exposure=false
 process/size_limit=0
-detect_3d/compress_to=0
+detect_3d/compress_to=1

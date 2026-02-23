@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://b86sp7o2cucu2"]
 
 [ext_resource type="PackedScene" uid="uid://m3uvedbq737d" path="res://Player.tscn" id="1_5ihuq"]
-[ext_resource type="Texture2D" uid="uid://cfbpnfvlo1xs4" path="res://Textures/sikodem.png" id="2_wrfgo"]
+[ext_resource type="Texture2D" uid="uid://cfbpnfvlo1xs4" path="res://assety/textures/sikodem.png" id="2_wrfgo"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_5ihuq"]
 size = Vector3(10, 1, 10)

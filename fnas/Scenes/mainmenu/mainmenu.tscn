@@ -7,15 +7,15 @@
 [ext_resource type="Texture2D" uid="uid://k2ucl5jj8wlf" path="res://assety/textures/worn_asphalt_nor_gl_2k.png" id="2_bs6s4"]
 [ext_resource type="Texture2D" uid="uid://kt5xahxupe1l" path="res://assety/textures/worn_asphalt_rough_2k.png" id="2_it37i"]
 [ext_resource type="Texture2D" uid="uid://doq1k5rij0bsl" path="res://assety/textures/photo-static-texture-pattern.png" id="2_ny5vv"]
-[ext_resource type="Script" uid="uid://b5hbf7c8kjgg" path="res://sceny/mainmenustaticfx.gd" id="3_2drq2"]
-[ext_resource type="Script" uid="uid://cbnqdardvm8a8" path="res://sceny/photo_static_texture_pattern.gd" id="3_3haqi"]
-[ext_resource type="Script" uid="uid://27hqlhv8ejrb" path="res://sceny/spot_light_3d.gd" id="6_6alau"]
+[ext_resource type="Script" uid="uid://b5hbf7c8kjgg" path="res://Scenes/mainmenu/mainmenustaticfx.gd" id="3_2drq2"]
+[ext_resource type="Script" uid="uid://cbnqdardvm8a8" path="res://Scenes/mainmenu/photo_static_texture_pattern.gd" id="3_3haqi"]
+[ext_resource type="Script" uid="uid://27hqlhv8ejrb" path="res://Scenes/mainmenu/spot_light_3d.gd" id="6_6alau"]
+[ext_resource type="Script" uid="uid://b4x2cp1c22tdm" path="res://Scenes/mainmenu/menu_button.gd" id="6_8rhrt"]
 [ext_resource type="Texture2D" uid="uid://d2wywpqm5vel6" path="res://addons/kenney_particle_pack/smoke_07.png" id="9_7yfny"]
 [ext_resource type="AudioStream" uid="uid://cly7w45hfj224" path="res://assety/sounds/dragon-studio-fire-sounds-405444.mp3" id="10_d6t2i"]
-[ext_resource type="ArrayMesh" uid="uid://b7i4dpv00y341" path="res://assety/untitled.obj" id="11_2drq2"]
-[ext_resource type="AudioStream" uid="uid://bkivv7r6pdke" path="res://assety/sounds/Lights Out.mp3" id="11_m3br3"]
+[ext_resource type="ArrayMesh" uid="uid://b7i4dpv00y341" path="res://assety/title_school.obj" id="11_2drq2"]
 [ext_resource type="AudioStream" uid="uid://csksea732rud1" path="res://assety/sounds/dragon-studio-tv-static-323620.mp3" id="14_3tu6g"]
-[ext_resource type="Script" uid="uid://4qy6l6n7txf8" path="res://sceny/mainmenucentercontainer.gd" id="16_x0a2r"]
+[ext_resource type="Script" uid="uid://4qy6l6n7txf8" path="res://Scenes/mainmenu/mainmenucentercontainer.gd" id="16_x0a2r"]
 [ext_resource type="Texture2D" uid="uid://ckh1y8erv6yuv" path="res://assety/textures/flashlight.png" id="17_7sswi"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_bs6s4"]
@@ -70,7 +70,7 @@ theme = ExtResource("1_6alau")
 modulate = Color(1, 1, 1, 0.38039216)
 layout_mode = 1
 offset_right = 1152.0
-offset_bottom = 644.0
+offset_bottom = 648.0
 stream = ExtResource("2_7eu7h")
 speed_scale = 10.0
 autoplay = true
@@ -99,17 +99,22 @@ vertical = true
 layout_mode = 2
 text = " New Game"
 alignment = 0
+script = ExtResource("6_8rhrt")
+btn_type = 0
 
 [node name="Continue" type="Button" parent="BoxContainer" unique_id=595659104]
 layout_mode = 2
 disabled = true
 text = " Continue - empty"
 alignment = 0
+script = ExtResource("6_8rhrt")
+btn_type = 1
 
 [node name="Button" type="Button" parent="BoxContainer" unique_id=1539999344]
 layout_mode = 2
 text = " Exit"
 alignment = 0
+script = ExtResource("6_8rhrt")
 
 [node name="RichTextLabel" type="RichTextLabel" parent="." unique_id=1118773917]
 layout_mode = 0
@@ -121,6 +126,18 @@ text = "Five
 Nights
 At
 Sikodem"
+
+[node name="Credits" type="RichTextLabel" parent="." unique_id=960271319]
+layout_mode = 0
+offset_left = 769.0
+offset_top = 595.0
+offset_right = 1152.0
+offset_bottom = 648.0
+theme_override_font_sizes/normal_font_size = 16
+text = "Perfect Nonsense 2026
+JakubKwantowy, MintPixels, DjNiko"
+horizontal_alignment = 2
+vertical_alignment = 2
 
 [node name="Node3D" type="Node3D" parent="." unique_id=1177685660]
 
@@ -165,13 +182,12 @@ stream = ExtResource("10_d6t2i")
 volume_db = -15.437
 autoplay = true
 
-[node name="Untitled" type="MeshInstance3D" parent="Node3D" unique_id=426764887]
+[node name="School" type="MeshInstance3D" parent="Node3D" unique_id=426764887]
 transform = Transform3D(0.049978405, 0, -0.0014693527, 0, 0.05, 0, 0.0014693527, 0, 0.049978405, -11.617303, -0.22239065, -17.019022)
 material_override = SubResource("StandardMaterial3D_2drq2")
 mesh = ExtResource("11_2drq2")
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=727916769]
-stream = ExtResource("11_m3br3")
 volume_db = -5.474
 autoplay = true
 
