@@ -5,6 +5,8 @@ const JUMP_VELOCITY = 7.0
 const MOUSE_SENSITIVITY = 0.003 # Czułość myszy
 
 @onready var camera = $Camera3D # Pobiera referencję do kamery
+@onready var stepemitter = $StepPlayer
+@onready var jumpemitter = $JumpPlayer
 
 func _ready():
 	# Blokuje kursor myszy na środku ekranu
@@ -35,6 +37,7 @@ func _physics_process(delta: float) -> void:
 	# Skok
 	if Input.is_action_just_pressed("ui_accept") and is_on_floor():
 		velocity.y = JUMP_VELOCITY
+		jumpemitter.play(0.13)
 
 	# Poruszanie się (używamy transform.basis, który teraz uwzględnia obrót myszą)
 	var input_dir := Input.get_vector("ui_left", "ui_right", "ui_up", "ui_down")
@@ -43,8 +46,11 @@ func _physics_process(delta: float) -> void:
 	if direction:
 		velocity.x = direction.x * SPEED
 		velocity.z = direction.z * SPEED
+		if not stepemitter.playing and is_on_floor():
+			stepemitter.pitch_scale = randf_range(0.9,1.1)
+			stepemitter.play()
 	else:
-		velocity.x = move_toward(velocity.x, 0, SPEED)
-		velocity.z = move_toward(velocity.z, 0, SPEED)
+		velocity.x = move_toward(velocity.x, 0, SPEED/10.0)
+		velocity.z = move_toward(velocity.z, 0, SPEED/10.0)
 
 	move_and_slide()
