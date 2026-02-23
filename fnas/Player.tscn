@@ -2,6 +2,8 @@
 
 [ext_resource type="Script" uid="uid://ckg8quqjrw4xs" path="res://player.gd" id="1_xhfnw"]
 [ext_resource type="Texture2D" uid="uid://ckh1y8erv6yuv" path="res://assety/textures/flashlight.png" id="2_kpjcp"]
+[ext_resource type="AudioStream" uid="uid://btwgayvk0422w" path="res://assety/sounds/step.mp3" id="3_kne1u"]
+[ext_resource type="AudioStream" uid="uid://doqyano4atkiu" path="res://assety/sounds/jump.mp3" id="4_e80uo"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_xhfnw"]
 
@@ -30,6 +32,17 @@ shadow_enabled = true
 spot_range = 7.23
 spot_angle = 34.27
 
+[node name="AudioListener3D" type="AudioListener3D" parent="Camera3D" unique_id=449077230]
+
 [node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=667114173]
 transform = Transform3D(1, 0, 0, 0, 1.633878, 0, 0, 0, 1, 0, 3.073519, 0)
 mesh = SubResource("BoxMesh_xhfnw")
+
+[node name="StepPlayer" type="AudioStreamPlayer3D" parent="." unique_id=2045467824]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.05044447, 3.4396524, 0)
+stream = ExtResource("3_kne1u")
+volume_db = -15.439
+doppler_tracking = 2
+
+[node name="JumpPlayer" type="AudioStreamPlayer3D" parent="." unique_id=1251589545]
+stream = ExtResource("4_e80uo")
