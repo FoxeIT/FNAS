@@ -11,9 +11,14 @@ config_version=5
 [application]
 
 config/name="FNAS"
-run/main_scene="uid://dr3j2piclepk5"
+config/description="Five Nights at Sikodem
+
+(ktoś doda opis tu plis?  --jakw)
+"
+config/version="v0.6.7"
+run/main_scene="uid://v2lswew3h538"
 config/features=PackedStringArray("4.6", "Forward Plus")
-config/icon="res://icon.svg"
+config/icon="uid://0g8bxreg2021"
 
 [input]
 

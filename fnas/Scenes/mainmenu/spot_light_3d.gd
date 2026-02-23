@@ -1,12 +1,12 @@
-extends TextureRect
+extends SpotLight3D
 
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	pass # Replace with function body.
 
-
+var tween
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
-	self.position = (get_viewport().get_visible_rect().size-self.size)/2
-	print(self.position)
+func _process(_delta: float) -> void:
+	tween = create_tween()
+	tween.tween_property(self, "light_energy", randi_range(0,3), 0.05)
