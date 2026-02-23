@@ -3,16 +3,16 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://cfbpnfvlo1xs4"
-path.s3tc="res://.godot/imported/sikodem.png-8c4534e86352b779b4654439c8a9f2d0.s3tc.ctex"
+path.etc2="res://.godot/imported/sikodem.png-8c4534e86352b779b4654439c8a9f2d0.etc2.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
+"imported_formats": ["etc2_astc"],
 "vram_texture": true
 }
 
 [deps]
 
 source_file="res://Textures/sikodem.png"
-dest_files=["res://.godot/imported/sikodem.png-8c4534e86352b779b4654439c8a9f2d0.s3tc.ctex"]
+dest_files=["res://.godot/imported/sikodem.png-8c4534e86352b779b4654439c8a9f2d0.etc2.ctex"]
 
 [params]
 

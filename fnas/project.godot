@@ -53,9 +53,9 @@ ui_down={
 [physics]
 
 3d/physics_engine="Jolt Physics"
+3d/default_gravity=9.345999999999997
 
 [rendering]
 
 rendering_device/driver.windows="d3d12"
-renderer/rendering_method="gl_compatibility"
-renderer/rendering_method.mobile="gl_compatibility"
+renderer/rendering_method="mobile"

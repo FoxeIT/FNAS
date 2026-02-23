@@ -25,11 +25,20 @@ albedo_color = Color(0.2695021, 0.270078, 0.37056863, 1)
 [sub_resource type="BoxMesh" id="BoxMesh_rwruy"]
 material = SubResource("StandardMaterial3D_xv8uw")
 
+[sub_resource type="Environment" id="Environment_xv8uw"]
+background_mode = 1
+fog_enabled = true
+fog_mode = 1
+fog_light_color = Color(0.20388639, 0.22488222, 0.2575513, 1)
+fog_density = 1.0
+fog_depth_begin = 5.0
+fog_depth_end = 15.0
+
 [node name="Biggayytest" type="Node3D" unique_id=1647491937]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.011991024, 0, 0)
 
 [node name="Player" parent="." unique_id=1152790506 instance=ExtResource("1_xv8uw")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.08904, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0041952133, 2.0728433, 0.006547928)
 
 [node name="StaticBody3D3" type="StaticBody3D" parent="." unique_id=1145885799]
 transform = Transform3D(7.966189, 0, 0, 0, 1.2500067, 0, 0, 0, 1.0819868, 2.4406574, 7.34951, -5.518387)
@@ -65,3 +74,6 @@ shape = SubResource("BoxShape3D_xv8uw")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="StaticBody3D" unique_id=1589038523]
 mesh = SubResource("BoxMesh_rwruy")
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=867423709]
+environment = SubResource("Environment_xv8uw")
