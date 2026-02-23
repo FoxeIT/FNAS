@@ -6,17 +6,13 @@
 [ext_resource type="VideoStream" uid="uid://jx63gx0audx1" path="res://assety/27519-364430915.ogv" id="2_7eu7h"]
 [ext_resource type="Texture2D" uid="uid://k2ucl5jj8wlf" path="res://assety/textures/worn_asphalt_nor_gl_2k.png" id="2_bs6s4"]
 [ext_resource type="Texture2D" uid="uid://kt5xahxupe1l" path="res://assety/textures/worn_asphalt_rough_2k.png" id="2_it37i"]
-[ext_resource type="Texture2D" uid="uid://doq1k5rij0bsl" path="res://assety/textures/photo-static-texture-pattern.png" id="2_ny5vv"]
 [ext_resource type="Script" uid="uid://b5hbf7c8kjgg" path="res://sceny/mainmenustaticfx.gd" id="3_2drq2"]
-[ext_resource type="Script" uid="uid://cbnqdardvm8a8" path="res://sceny/photo_static_texture_pattern.gd" id="3_3haqi"]
 [ext_resource type="Script" uid="uid://27hqlhv8ejrb" path="res://sceny/spot_light_3d.gd" id="6_6alau"]
 [ext_resource type="Texture2D" uid="uid://d2wywpqm5vel6" path="res://addons/kenney_particle_pack/smoke_07.png" id="9_7yfny"]
 [ext_resource type="AudioStream" uid="uid://cly7w45hfj224" path="res://assety/sounds/dragon-studio-fire-sounds-405444.mp3" id="10_d6t2i"]
 [ext_resource type="ArrayMesh" uid="uid://b7i4dpv00y341" path="res://assety/untitled.obj" id="11_2drq2"]
 [ext_resource type="AudioStream" uid="uid://bkivv7r6pdke" path="res://assety/sounds/Lights Out.mp3" id="11_m3br3"]
 [ext_resource type="AudioStream" uid="uid://csksea732rud1" path="res://assety/sounds/dragon-studio-tv-static-323620.mp3" id="14_3tu6g"]
-[ext_resource type="Script" uid="uid://4qy6l6n7txf8" path="res://sceny/mainmenucentercontainer.gd" id="16_x0a2r"]
-[ext_resource type="Texture2D" uid="uid://ckh1y8erv6yuv" path="res://assety/textures/flashlight.png" id="17_7sswi"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_bs6s4"]
 albedo_color = Color(0.17846772, 0.17918268, 0.15541753, 1)
@@ -77,15 +73,6 @@ autoplay = true
 expand = true
 loop = true
 script = ExtResource("3_2drq2")
-
-[node name="PhotoStaticTexturePattern" type="Sprite2D" parent="." unique_id=241973401]
-visible = false
-modulate = Color(1, 1, 1, 0.16078432)
-texture_repeat = 2
-position = Vector2(645.99994, 352.5)
-scale = Vector2(1.7299999, 1.6097379)
-texture = ExtResource("2_ny5vv")
-script = ExtResource("3_3haqi")
 
 [node name="BoxContainer" type="BoxContainer" parent="." unique_id=760287846]
 layout_mode = 0
@@ -178,14 +165,5 @@ autoplay = true
 [node name="AudioStreamPlayer2" type="AudioStreamPlayer" parent="." unique_id=1460395275]
 stream = ExtResource("14_3tu6g")
 volume_db = -24.321
-pitch_scale = 0.69
+pitch_scale = 0.62
 autoplay = true
-
-[node name="StudioLogo" type="TextureRect" parent="." unique_id=1114955545]
-visible = false
-layout_mode = 0
-offset_right = 2048.0
-offset_bottom = 2048.0
-pivot_offset = Vector2(1024, 1024)
-texture = ExtResource("17_7sswi")
-script = ExtResource("16_x0a2r")
