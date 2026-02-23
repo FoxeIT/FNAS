@@ -19,6 +19,6 @@ fog_light_color = Color(0.03615423, 0.04367757, 0.055487983, 1)
 fog_density = 1.0
 fog_depth_curve = 1.1095697
 fog_depth_begin = 0.0
-fog_depth_end = 20.0
+fog_depth_end = 16.7
 adjustment_enabled = true
 adjustment_brightness = 0.84

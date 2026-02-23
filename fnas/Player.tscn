@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://m3uvedbq737d"]
 
 [ext_resource type="Script" uid="uid://ckg8quqjrw4xs" path="res://player.gd" id="1_xhfnw"]
+[ext_resource type="Texture2D" uid="uid://ckh1y8erv6yuv" path="res://assety/textures/flashlight.png" id="2_kpjcp"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_xhfnw"]
 
@@ -23,6 +24,10 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.05044447, 3.4396524, 0)
 
 [node name="SpotLight3D" type="SpotLight3D" parent="Camera3D" unique_id=964406229]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.041994438, 0.008941889, 0)
+light_projector = ExtResource("2_kpjcp")
+shadow_enabled = true
+spot_range = 5.926
+spot_angle = 34.27
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=667114173]
 transform = Transform3D(1, 0, 0, 0, 1.633878, 0, 0, 0, 1, 0, 3.073519, 0)
