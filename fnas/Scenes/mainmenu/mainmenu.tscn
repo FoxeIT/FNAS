@@ -15,8 +15,8 @@
 [ext_resource type="AudioStream" uid="uid://cly7w45hfj224" path="res://assety/sounds/dragon-studio-fire-sounds-405444.mp3" id="10_d6t2i"]
 [ext_resource type="ArrayMesh" uid="uid://b7i4dpv00y341" path="res://assety/title_school.obj" id="11_2drq2"]
 [ext_resource type="AudioStream" uid="uid://csksea732rud1" path="res://assety/sounds/dragon-studio-tv-static-323620.mp3" id="14_3tu6g"]
-[ext_resource type="Script" uid="uid://4qy6l6n7txf8" path="res://Scenes/mainmenu/mainmenucentercontainer.gd" id="16_x0a2r"]
-[ext_resource type="Texture2D" uid="uid://ckh1y8erv6yuv" path="res://assety/textures/flashlight.png" id="17_7sswi"]
+[ext_resource type="Script" uid="uid://4qy6l6n7txf8" path="res://Scenes/mainmenu/introanim.gd" id="16_o1utx"]
+[ext_resource type="Texture2D" uid="uid://bd3uf7csoixvc" path="res://assety/textures/logo_intro.png" id="17_8rhrt"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_bs6s4"]
 albedo_color = Color(0.17846772, 0.17918268, 0.15541753, 1)
@@ -57,6 +57,103 @@ material = SubResource("StandardMaterial3D_d6t2i")
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_2drq2"]
 albedo_color = Color(0.44634718, 0.5153812, 0.53286177, 1)
 metallic = 0.25
+
+[sub_resource type="Animation" id="Animation_8rhrt"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Logo:modulate:a")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [1.0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Text1:modulate:a")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [1.0]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath(".:modulate:a")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [1.0]
+}
+
+[sub_resource type="Animation" id="Animation_h5iq1"]
+resource_name = "intro"
+length = 10.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Logo:modulate:a")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(1, 2, 6.96, 8),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [0.0, 1.0, 1.0, 0.0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Text1:modulate:a")
+tracks/1/interp = 2
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(3, 4, 6.96, 8),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [0.0, 1.0, 1.0, 0.0]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Text2:modulate:a")
+tracks/2/interp = 2
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(5, 6, 6.96, 8),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [0.0, 1.0, 1.0, 0.0]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath(".:modulate:a")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(9, 10),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [1.0, 0.0]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_78nvb"]
+_data = {
+&"RESET": SubResource("Animation_8rhrt"),
+&"intro": SubResource("Animation_h5iq1")
+}
 
 [node name="Control" type="Control" unique_id=640720380]
 layout_direction = 2
@@ -134,7 +231,7 @@ offset_top = 595.0
 offset_right = 1152.0
 offset_bottom = 648.0
 theme_override_font_sizes/normal_font_size = 16
-text = "Perfect Nonsense 2026
+text = "Perfekcyjny Nonsens 2026
 JakubKwantowy, MintPixels, DjNiko"
 horizontal_alignment = 2
 vertical_alignment = 2
@@ -197,11 +294,33 @@ volume_db = -24.321
 pitch_scale = 0.69
 autoplay = true
 
-[node name="StudioLogo" type="TextureRect" parent="." unique_id=1114955545]
-visible = false
-layout_mode = 0
-offset_right = 2048.0
-offset_bottom = 2048.0
-pivot_offset = Vector2(1024, 1024)
-texture = ExtResource("17_7sswi")
-script = ExtResource("16_x0a2r")
+[node name="StudioLogo" type="Node2D" parent="." unique_id=702866134]
+script = ExtResource("16_o1utx")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="StudioLogo" unique_id=176132318]
+libraries/ = SubResource("AnimationLibrary_78nvb")
+
+[node name="ColorRect" type="ColorRect" parent="StudioLogo" unique_id=1158430540]
+offset_right = 40.0
+offset_bottom = 40.0
+color = Color(0, 0, 0, 1)
+
+[node name="Logo" type="Sprite2D" parent="StudioLogo" unique_id=1400835961]
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("17_8rhrt")
+
+[node name="Text1" type="RichTextLabel" parent="StudioLogo" unique_id=195515232]
+offset_right = 728.0
+offset_bottom = 77.0
+theme = ExtResource("1_6alau")
+text = "Perfekcyjny Nonsens"
+horizontal_alignment = 1
+
+[node name="Text2" type="RichTextLabel" parent="StudioLogo" unique_id=328354677]
+modulate = Color(1, 1, 1, 0)
+offset_right = 728.0
+offset_bottom = 77.0
+theme = ExtResource("1_6alau")
+text = "prezentuje"
+horizontal_alignment = 1
+vertical_alignment = 2
