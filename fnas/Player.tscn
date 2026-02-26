@@ -26,8 +26,9 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.05044447, 3.4396524, 0)
 
 [node name="SpotLight3D" type="SpotLight3D" parent="Camera3D" unique_id=964406229]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.041994438, 0.008941889, 0)
-light_energy = 1.968
+light_energy = 3.077
 light_projector = ExtResource("2_kpjcp")
+light_size = 0.535
 shadow_enabled = true
 spot_range = 7.23
 spot_angle = 34.27
@@ -46,3 +47,4 @@ doppler_tracking = 2
 
 [node name="JumpPlayer" type="AudioStreamPlayer3D" parent="." unique_id=1251589545]
 stream = ExtResource("4_e80uo")
+volume_db = 9.825

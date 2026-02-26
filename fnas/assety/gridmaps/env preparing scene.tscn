@@ -1,0 +1,46 @@
+[gd_scene format=3 uid="uid://bxoq2dwpn1fvl"]
+
+[ext_resource type="Texture2D" uid="uid://mcd2h7r2utqt" path="res://assety/textures/rocky_terrain_02_diff_2k.jpg" id="1_mjcit"]
+[ext_resource type="Texture2D" uid="uid://cipue43b407xr" path="res://assety/textures/rocky_terrain_02_arm_2k.jpg" id="2_b5eby"]
+[ext_resource type="Texture2D" uid="uid://cgihhc32tahc6" path="res://assety/textures/rocky_terrain_02_nor_gl_2k.png" id="3_vsna5"]
+[ext_resource type="Texture2D" uid="uid://gp12lyrocajr" path="res://assety/textures/rocky_terrain_02_rough_2k.png" id="4_r4l2k"]
+[ext_resource type="PackedScene" uid="uid://m3uvedbq737d" path="res://Player.tscn" id="5_b5eby"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_wk1xb"]
+albedo_texture = ExtResource("1_mjcit")
+metallic = 1.0
+metallic_specular = 0.61
+metallic_texture = ExtResource("2_b5eby")
+metallic_texture_channel = 3
+roughness = 0.81
+roughness_texture = ExtResource("4_r4l2k")
+roughness_texture_channel = 1
+normal_enabled = true
+normal_scale = 2.1
+normal_texture = ExtResource("3_vsna5")
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_cjble"]
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_vsna5"]
+size = Vector2(12.58, 14.79)
+
+[sub_resource type="WorldBoundaryShape3D" id="WorldBoundaryShape3D_r4l2k"]
+
+[node name="Node3D" type="Node3D" unique_id=566207293]
+
+[node name="grass" type="MeshInstance3D" parent="." unique_id=1998327229]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.015795887, 0.014237061, -0.014182448)
+material_override = SubResource("StandardMaterial3D_wk1xb")
+mesh = SubResource("PlaneMesh_cjble")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="." unique_id=1825292079]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.4571294, 0)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="StaticBody3D" unique_id=1067943927]
+mesh = SubResource("PlaneMesh_vsna5")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D" unique_id=746125446]
+shape = SubResource("WorldBoundaryShape3D_r4l2k")
+
+[node name="CharacterBody3D" parent="." unique_id=1152790506 instance=ExtResource("5_b5eby")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.6945038, 0.16544127, 6.1775627)
