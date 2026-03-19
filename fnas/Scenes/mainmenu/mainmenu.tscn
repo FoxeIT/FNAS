@@ -96,10 +96,34 @@ tracks/2/keys = {
 "update": 1,
 "values": [1.0]
 }
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("../AudioStreamPlayer:volume_db")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [-80.0]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("../AudioStreamPlayer2:volume_db")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [-80.0]
+}
 
 [sub_resource type="Animation" id="Animation_h5iq1"]
 resource_name = "intro"
-length = 10.0
+length = 10.033334
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -147,6 +171,30 @@ tracks/3/keys = {
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
 "values": [1.0, 0.0]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("../AudioStreamPlayer:volume_db")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(8.533334, 10),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [-80.0, -5.474]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("../AudioStreamPlayer2:volume_db")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(8.54, 10),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [-80.0, -24.321]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_78nvb"]
@@ -285,12 +333,12 @@ material_override = SubResource("StandardMaterial3D_2drq2")
 mesh = ExtResource("11_2drq2")
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=727916769]
-volume_db = -5.474
+volume_db = -80.0
 autoplay = true
 
 [node name="AudioStreamPlayer2" type="AudioStreamPlayer" parent="." unique_id=1460395275]
 stream = ExtResource("14_3tu6g")
-volume_db = -24.321
+volume_db = -80.0
 pitch_scale = 0.69
 autoplay = true
 
