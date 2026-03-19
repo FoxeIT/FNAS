@@ -1,7 +1,7 @@
 extends CharacterBody3D
 
 const SPEED = 7.0
-const JUMP_VELOCITY = 7.0
+const JUMP_VELOCITY = 0.1
 const MOUSE_SENSITIVITY = 0.003 # Czułość myszy
 const STEPSOUND_DELAY_MIN = 0.4
 const STEPSOUND_DELAY_MAX = 0.5
