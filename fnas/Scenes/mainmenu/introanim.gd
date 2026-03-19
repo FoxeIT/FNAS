@@ -16,12 +16,12 @@ func _ready() -> void:
 	text2 = get_node("Text2")
 	audioBus = AudioServer.get_bus_index("Master")
 	
-	AudioServer.set_bus_volume_linear(audioBus, 0)
+	#AudioServer.set_bus_volume_linear(audioBus, 0)
 	animator.connect("animation_finished", _anim_done)
 	animator.play("intro")
 
 func _anim_done(_1):
-	AudioServer.set_bus_volume_linear(audioBus, 1)
+	#AudioServer.set_bus_volume_linear(audioBus, 1)
 	self.queue_free()
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.

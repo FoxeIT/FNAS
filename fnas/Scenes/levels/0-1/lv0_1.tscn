@@ -1,0 +1,14 @@
+[gd_scene format=3 uid="uid://bblpuvuudcfn0"]
+
+[ext_resource type="Environment" uid="uid://dodbf8ogupn4c" path="res://assety/testenv.tres" id="1_pfqkh"]
+
+[node name="Lv01" type="Node3D" unique_id=1023030941]
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=1714148080]
+environment = ExtResource("1_pfqkh")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="." unique_id=325611482]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="StaticBody3D" unique_id=1939342809]
+
+[node name="GridMap" type="GridMap" parent="." unique_id=1762685574]

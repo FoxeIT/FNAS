@@ -1,0 +1,35 @@
+[gd_scene format=3 uid="uid://bxoq2dwpn1fvl"]
+
+[ext_resource type="Material" uid="uid://bqhjk36myv3i3" path="res://assety/grass.tres" id="1_gd318"]
+[ext_resource type="Material" uid="uid://dbce8o7m74wqh" path="res://assety/asphalt.tres" id="2_x6tok"]
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_cjble"]
+
+[sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_hen23"]
+data = PackedVector3Array(1, 0, 1, -1, 0, 1, 1, 0, -1, -1, 0, 1, -1, 0, -1, 1, 0, -1)
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_gwjs3"]
+
+[sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_a45j4"]
+data = PackedVector3Array(1, 0, 1, -1, 0, 1, 1, 0, -1, -1, 0, 1, -1, 0, -1, 1, 0, -1)
+
+[node name="Node3D" type="Node3D" unique_id=566207293]
+
+[node name="grass" type="MeshInstance3D" parent="." unique_id=1998327229]
+material_override = ExtResource("1_gd318")
+mesh = SubResource("PlaneMesh_cjble")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="grass" unique_id=2001317973]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="grass/StaticBody3D" unique_id=1536776912]
+shape = SubResource("ConcavePolygonShape3D_hen23")
+
+[node name="asphaltmiddle" type="MeshInstance3D" parent="." unique_id=331440793]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 2)
+material_override = ExtResource("2_x6tok")
+mesh = SubResource("PlaneMesh_gwjs3")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="asphaltmiddle" unique_id=611455286]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="asphaltmiddle/StaticBody3D" unique_id=752463644]
+shape = SubResource("ConcavePolygonShape3D_a45j4")

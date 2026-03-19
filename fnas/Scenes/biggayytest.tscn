@@ -1,6 +1,8 @@
 [gd_scene format=3 uid="uid://dr3j2piclepk5"]
 
 [ext_resource type="PackedScene" uid="uid://m3uvedbq737d" path="res://Player.tscn" id="1_xv8uw"]
+[ext_resource type="Environment" uid="uid://dodbf8ogupn4c" path="res://assety/testenv.tres" id="2_rwruy"]
+[ext_resource type="Texture2D" uid="uid://c7eipngnhajl3" path="res://assety/image.jpg" id="2_wp7sn"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_xv8uw"]
 
@@ -24,15 +26,6 @@ albedo_color = Color(0.2695021, 0.270078, 0.37056863, 1)
 
 [sub_resource type="BoxMesh" id="BoxMesh_rwruy"]
 material = SubResource("StandardMaterial3D_xv8uw")
-
-[sub_resource type="Environment" id="Environment_xv8uw"]
-background_mode = 1
-fog_enabled = true
-fog_mode = 1
-fog_light_color = Color(0.20388639, 0.22488222, 0.2575513, 1)
-fog_density = 1.0
-fog_depth_begin = 5.0
-fog_depth_end = 15.0
 
 [node name="Biggayytest" type="Node3D" unique_id=1647491937]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.011991024, 0, 0)
@@ -67,7 +60,7 @@ mesh = SubResource("BoxMesh_wp7sn")
 skin = SubResource("Skin_rwruy")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="." unique_id=1541022219]
-transform = Transform3D(18.795223, 0, 0, 0, 1, 0, 0, 0, 12.680968, 0, 0, 0)
+transform = Transform3D(41.577385, 0, 0, 0, 1, 0, 0, 0, 28.66612, 0, 0, 0)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D" unique_id=847994105]
 shape = SubResource("BoxShape3D_xv8uw")
@@ -76,4 +69,16 @@ shape = SubResource("BoxShape3D_xv8uw")
 mesh = SubResource("BoxMesh_rwruy")
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=867423709]
-environment = SubResource("Environment_xv8uw")
+environment = ExtResource("2_rwruy")
+
+[node name="Sprite3D" type="Sprite3D" parent="." unique_id=347965921]
+transform = Transform3D(0.47325814, 0, -0.8809238, 0, 1, 0, 0.8809238, 0, 0.47325814, 16.729559, 2.8258367, 0)
+modulate = Color(1, 0.38795537, 0.3197254, 1)
+texture = ExtResource("2_wp7sn")
+
+[node name="OmniLight3D" type="OmniLight3D" parent="Sprite3D" unique_id=468905680]
+light_color = Color(1, 0, 0, 1)
+light_energy = 9.282
+light_indirect_energy = 2.778
+omni_range = 5.833
+omni_attenuation = 0.98
