@@ -9,6 +9,11 @@ const STEPSOUND_DELAY_MAX = 0.5
 @onready var camera = $Camera3D # Pobiera referencję do kamery
 @onready var stepemitter = $StepPlayer
 @onready var jumpemitter = $JumpPlayer
+@onready var nsactivateemitter = $NSActivate
+@onready var uiNightshot = $UI/CAMNS
+@onready var uiNightshotShader = $UI/NightshotShader
+@onready var nightshotLight = $NSLight
+@onready var flashLight = $Camera3D/FlashLight
 
 func _ready():
 	# Blokuje kursor myszy na środku ekranu
@@ -26,10 +31,30 @@ func _input(event):
 		
 	if event is InputEventMouseButton:
 		Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
+		if event.pressed:
+			match event.button_index:
+				2:
+					uiNightshot.visible = true
+					uiNightshotShader.visible = true
+					nightshotLight.visible = true
+					flashLight.visible = false
+					nsactivateemitter.play()
+		else:
+			match event.button_index:
+				2:
+					uiNightshot.visible = false
+					uiNightshotShader.visible = false
+					nightshotLight.visible = false
+					flashLight.visible = true
+					nsactivateemitter.stop()
 
 var stepdelay: float = 0
 
 func _physics_process(delta: float) -> void:
+	var size = get_viewport().get_visible_rect().size
+	uiNightshotShader.size = size
+	uiNightshot.size = size
+	
 	# Wyjście z gry/odblokowanie myszy po ESC
 	if Input.is_action_just_pressed("ui_cancel"):
 		Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
@@ -42,7 +67,7 @@ func _physics_process(delta: float) -> void:
 	if Input.is_action_just_pressed("ui_accept") and is_on_floor():
 		velocity.y = JUMP_VELOCITY
 		jumpemitter.pitch_scale = randf_range(0.95,1.00)
-		jumpemitter.play()
+		jumpemitter.play(0.15)
 
 	# Poruszanie się (używamy transform.basis, który teraz uwzględnia obrót myszą)
 	var input_dir := Input.get_vector("ui_left", "ui_right", "ui_up", "ui_down")

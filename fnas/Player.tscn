@@ -3,7 +3,10 @@
 [ext_resource type="Script" uid="uid://ckg8quqjrw4xs" path="res://player.gd" id="1_xhfnw"]
 [ext_resource type="Texture2D" uid="uid://ckh1y8erv6yuv" path="res://assety/textures/flashlight.png" id="2_kpjcp"]
 [ext_resource type="AudioStream" uid="uid://btwgayvk0422w" path="res://assety/sounds/step.mp3" id="3_kne1u"]
+[ext_resource type="AudioStream" uid="uid://sp3qgtd23bfs" path="res://assety/sounds/ns_activate.mp3" id="3_tdg3f"]
 [ext_resource type="AudioStream" uid="uid://doqyano4atkiu" path="res://assety/sounds/jump.mp3" id="4_e80uo"]
+[ext_resource type="FontFile" uid="uid://dk0avwccxi4sr" path="res://assety/VT323-Regular.ttf" id="5_cxr5p"]
+[ext_resource type="Shader" uid="uid://7i8krnnwc6vq" path="res://assety/nightshot.gdshader" id="7_dtqjt"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_xhfnw"]
 
@@ -13,6 +16,9 @@ albedo_color = Color(0.09019608, 1, 1, 1)
 [sub_resource type="BoxMesh" id="BoxMesh_xhfnw"]
 material = SubResource("StandardMaterial3D_xhfnw")
 
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_5ncpa"]
+shader = ExtResource("7_dtqjt")
+
 [node name="CharacterBody3D" type="CharacterBody3D" unique_id=1152790506]
 script = ExtResource("1_xhfnw")
 
@@ -21,10 +27,24 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.0716476, 0)
 shape = SubResource("CapsuleShape3D_xhfnw")
 debug_color = Color(0, 0.6, 0.69803923, 1)
 
+[node name="NSLight" type="Node3D" parent="." unique_id=1440369322]
+
+[node name="NSLight1" type="DirectionalLight3D" parent="NSLight" unique_id=1150282447]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3, 0)
+light_angular_distance = 90.0
+
+[node name="NSLight2" type="DirectionalLight3D" parent="NSLight" unique_id=397975165]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 0, 3, 0)
+light_angular_distance = 90.0
+
+[node name="NSLight3" type="DirectionalLight3D" parent="NSLight" unique_id=2000917306]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, 0, 3, 0)
+light_angular_distance = 90.0
+
 [node name="Camera3D" type="Camera3D" parent="." unique_id=1833594380]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.05044447, 3.4396524, 0)
 
-[node name="SpotLight3D" type="SpotLight3D" parent="Camera3D" unique_id=964406229]
+[node name="FlashLight" type="SpotLight3D" parent="Camera3D" unique_id=964406229]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.041994438, 0.008941889, 0)
 light_energy = 3.077
 light_projector = ExtResource("2_kpjcp")
@@ -39,6 +59,12 @@ spot_angle = 34.27
 transform = Transform3D(1, 0, 0, 0, 1.633878, 0, 0, 0, 1, 0, 3.073519, 0)
 mesh = SubResource("BoxMesh_xhfnw")
 
+[node name="NSActivate" type="AudioStreamPlayer3D" parent="." unique_id=863047898]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3, 0)
+stream = ExtResource("3_tdg3f")
+volume_db = -15.439
+doppler_tracking = 2
+
 [node name="StepPlayer" type="AudioStreamPlayer3D" parent="." unique_id=2045467824]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.05044447, 3.4396524, 0)
 stream = ExtResource("3_kne1u")
@@ -48,3 +74,38 @@ doppler_tracking = 2
 [node name="JumpPlayer" type="AudioStreamPlayer3D" parent="." unique_id=1251589545]
 stream = ExtResource("4_e80uo")
 volume_db = 9.825
+
+[node name="UI" type="Control" parent="." unique_id=1263212587]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="NightshotShader" type="ColorRect" parent="UI" unique_id=1753546821]
+visible = false
+material = SubResource("ShaderMaterial_5ncpa")
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="CAM01" type="Label" parent="UI" unique_id=804714640]
+layout_mode = 0
+offset_right = 231.0
+offset_bottom = 101.0
+theme_override_fonts/font = ExtResource("5_cxr5p")
+theme_override_font_sizes/font_size = 48
+text = "BATT 100%
+2500 MB FREE"
+
+[node name="CAMNS" type="Label" parent="UI" unique_id=1884444991]
+visible = false
+layout_mode = 0
+offset_right = 1154.0
+offset_bottom = 67.0
+theme_override_colors/font_color = Color(0.33333334, 1, 0.33333334, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 6
+theme_override_fonts/font = ExtResource("5_cxr5p")
+theme_override_font_sizes/font_size = 48
+text = "NIGHTSHOT"
+horizontal_alignment = 2
