@@ -3,6 +3,8 @@ extends CharacterBody3D
 const SPEED = 7.0
 const JUMP_VELOCITY = 7.0
 const MOUSE_SENSITIVITY = 0.003 # Czułość myszy
+const STEPSOUND_DELAY_MIN = 0.4
+const STEPSOUND_DELAY_MAX = 0.5
 
 @onready var camera = $Camera3D # Pobiera referencję do kamery
 @onready var stepemitter = $StepPlayer
@@ -25,6 +27,8 @@ func _input(event):
 	if event is InputEventMouseButton:
 		Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
 
+var stepdelay: float = 0
+
 func _physics_process(delta: float) -> void:
 	# Wyjście z gry/odblokowanie myszy po ESC
 	if Input.is_action_just_pressed("ui_cancel"):
@@ -37,7 +41,8 @@ func _physics_process(delta: float) -> void:
 	# Skok
 	if Input.is_action_just_pressed("ui_accept") and is_on_floor():
 		velocity.y = JUMP_VELOCITY
-		jumpemitter.play(0.13)
+		jumpemitter.pitch_scale = randf_range(0.95,1.00)
+		jumpemitter.play()
 
 	# Poruszanie się (używamy transform.basis, który teraz uwzględnia obrót myszą)
 	var input_dir := Input.get_vector("ui_left", "ui_right", "ui_up", "ui_down")
@@ -46,11 +51,14 @@ func _physics_process(delta: float) -> void:
 	if direction:
 		velocity.x = direction.x * SPEED
 		velocity.z = direction.z * SPEED
-		if not stepemitter.playing and is_on_floor():
+		if not stepemitter.playing and is_on_floor() and stepdelay <= 0:
 			stepemitter.pitch_scale = randf_range(0.9,1.1)
 			stepemitter.play()
+			stepdelay = randf_range(STEPSOUND_DELAY_MIN, STEPSOUND_DELAY_MAX)
 	else:
 		velocity.x = move_toward(velocity.x, 0, SPEED/10.0)
 		velocity.z = move_toward(velocity.z, 0, SPEED/10.0)
+
+	if stepdelay > 0: stepdelay -= delta
 
 	move_and_slide()
