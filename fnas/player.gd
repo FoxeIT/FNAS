@@ -14,6 +14,7 @@ const STEPSOUND_DELAY_MAX = 0.5
 @onready var uiNightshotShader = $UI/NightshotShader
 @onready var nightshotLight = $NSLight
 @onready var flashLight = $Camera3D/FlashLight
+@onready var noiseFX = $UI/VideoStreamPlayer
 
 func _ready():
 	# Blokuje kursor myszy na środku ekranu
@@ -38,6 +39,7 @@ func _input(event):
 					uiNightshotShader.visible = true
 					nightshotLight.visible = true
 					flashLight.visible = false
+					noiseFX.visible = true
 					nsactivateemitter.play()
 		else:
 			match event.button_index:
@@ -46,6 +48,7 @@ func _input(event):
 					uiNightshotShader.visible = false
 					nightshotLight.visible = false
 					flashLight.visible = true
+					noiseFX.visible = false
 					nsactivateemitter.stop()
 
 var stepdelay: float = 0
