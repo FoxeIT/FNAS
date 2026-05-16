@@ -44,10 +44,10 @@ transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, 0, 3
 light_angular_distance = 90.0
 
 [node name="Camera3D" type="Camera3D" parent="." unique_id=1833594380]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.05044447, 3.4396524, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.44, 0)
 
 [node name="FlashLight" type="SpotLight3D" parent="Camera3D" unique_id=964406229]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.041994438, 0.008941889, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.009, 0)
 light_energy = 3.077
 light_projector = ExtResource("2_kpjcp")
 light_size = 0.535
@@ -60,23 +60,25 @@ current = true
 
 [node name="HandsRoot" type="Node3D" parent="Camera3D" unique_id=699810346]
 
-[node name="LeftHand" type="MeshInstance3D" parent="Camera3D/HandsRoot" unique_id=40364327]
+[node name="idk" parent="Camera3D/HandsRoot" unique_id=1375659435 instance=ExtResource("10_3tkgg")]
+transform = Transform3D(0.0074659716, -0.12263955, 0.00010740222, 0.08667799, 0.01056352, 0, -9.251717e-06, 0.00015197303, 0.0866717, -0.31879598, -0.093844414, -0.66168326)
+
+[node name="idk2" parent="Camera3D/HandsRoot" unique_id=1605654763 instance=ExtResource("10_3tkgg")]
+transform = Transform3D(0.007466057, 0.12254608, 0.00014728827, 0.08667905, -0.010555475, -1.819142e-12, -1.2639817e-05, -0.00020746698, 0.08699987, 0.31416565, -0.093844414, -0.65511984)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Camera3D/HandsRoot" unique_id=3352684]
+
+[node name="handsold" type="Node3D" parent="Camera3D" unique_id=1185635133]
+
+[node name="LeftHand" type="MeshInstance3D" parent="Camera3D/handsold" unique_id=40364327]
 transform = Transform3D(0.10687668, 0, 0, 0, 0.17359886, 0, 0, 0, 1, -0.4185335, -0.1072216, -0.58602333)
 visible = false
 mesh = SubResource("BoxMesh_dtqjt")
 
-[node name="RightHand" type="MeshInstance3D" parent="Camera3D/HandsRoot" unique_id=1185329314]
+[node name="RightHand" type="MeshInstance3D" parent="Camera3D/handsold" unique_id=1185329314]
 transform = Transform3D(0.13549596, 0, 0, 0, 0.1911659, 0, 0, 0, 1, 0.41037858, -0.14147305, -0.59133446)
 visible = false
 mesh = SubResource("BoxMesh_dtqjt")
-
-[node name="idk" parent="Camera3D/HandsRoot" unique_id=1375659435 instance=ExtResource("10_3tkgg")]
-transform = Transform3D(0.007465977, -0.12263965, 0, 0.086678, 0.01056352, 0, 0, 0, 0.08667177, -0.36354572, -0.093844414, -0.6640385)
-
-[node name="idk2" parent="Camera3D/HandsRoot" unique_id=1605654763 instance=ExtResource("10_3tkgg")]
-transform = Transform3D(0.007465977, -0.12263965, 0, 0.086678, 0.01056352, 0, 0, 0, 0.08667177, 0.16102822, -0.093844414, -0.65511984)
-
-[node name="AnimationPlayer" type="AnimationPlayer" parent="Camera3D/HandsRoot" unique_id=3352684]
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=667114173]
 transform = Transform3D(1, 0, 0, 0, 1.0000963, 0, 0, 0, 1, 0, 3.073519, 0)
