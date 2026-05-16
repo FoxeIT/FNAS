@@ -216,12 +216,8 @@ theme = ExtResource("1_6alau")
 
 [node name="Credits" type="RichTextLabel" parent="." unique_id=960271319]
 layout_mode = 1
-anchors_preset = 2
-anchor_top = 1.0
-anchor_bottom = 1.0
-offset_top = -37.22998
 offset_right = 258.765
-grow_vertical = 0
+offset_bottom = 63.625
 theme_override_font_sizes/normal_font_size = 16
 text = "Perfekcyjny Nonsens 2026
 JakubKwantowy, MintPixels, DjNiko"
