@@ -3,9 +3,9 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://birp6v81w7s8m"
-path.s3tc="res://.godot/imported/tv-poked_Image_2.png-db870d13d0b4710a768bef9d4f6a7b74.s3tc.ctex"
+path.etc2="res://.godot/imported/tv-poked_Image_2.png-db870d13d0b4710a768bef9d4f6a7b74.etc2.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
+"imported_formats": ["etc2_astc"],
 "vram_texture": true
 }
 generator_parameters={
@@ -15,7 +15,7 @@ generator_parameters={
 [deps]
 
 source_file="res://assety/tv-poked_Image_2.png"
-dest_files=["res://.godot/imported/tv-poked_Image_2.png-db870d13d0b4710a768bef9d4f6a7b74.s3tc.ctex"]
+dest_files=["res://.godot/imported/tv-poked_Image_2.png-db870d13d0b4710a768bef9d4f6a7b74.etc2.ctex"]
 
 [params]
 

@@ -3,16 +3,16 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://bp2b0x8t4d538"
-path.s3tc="res://.godot/imported/rocky_terrain_02_ao_2k.jpg-3e0db76c28a429669ebd9fe1ec154d02.s3tc.ctex"
+path.etc2="res://.godot/imported/rocky_terrain_02_ao_2k.jpg-3e0db76c28a429669ebd9fe1ec154d02.etc2.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
+"imported_formats": ["etc2_astc"],
 "vram_texture": true
 }
 
 [deps]
 
 source_file="res://assety/textures/rocky_terrain_02_ao_2k.jpg"
-dest_files=["res://.godot/imported/rocky_terrain_02_ao_2k.jpg-3e0db76c28a429669ebd9fe1ec154d02.s3tc.ctex"]
+dest_files=["res://.godot/imported/rocky_terrain_02_ao_2k.jpg-3e0db76c28a429669ebd9fe1ec154d02.etc2.ctex"]
 
 [params]
 
