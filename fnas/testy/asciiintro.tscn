@@ -1,0 +1,756 @@
+[gd_scene format=3 uid="uid://bgw0t4ux7qwsi"]
+
+[ext_resource type="FontFile" uid="uid://copch0q0mg70c" path="res://assety/JetBrainsMonoNL-Regular.ttf" id="1_6stln"]
+[ext_resource type="Script" uid="uid://qtc3ruep0xg" path="res://testy/asciiintro.gd" id="1_mlqhw"]
+[ext_resource type="Texture2D" uid="uid://ckh1y8erv6yuv" path="res://assety/textures/flashlight.png" id="1_y3imr"]
+[ext_resource type="VideoStream" uid="uid://jx63gx0audx1" path="res://assety/27519-364430915.ogv" id="3_mlqhw"]
+[ext_resource type="PackedScene" uid="uid://7hbrudw5tija" path="res://assety/tv-poked.glb" id="3_wtwhr"]
+[ext_resource type="AudioStream" uid="uid://csksea732rud1" path="res://assety/sounds/dragon-studio-tv-static-323620.mp3" id="6_7rrl4"]
+[ext_resource type="AudioStream" uid="uid://devtowrfw6flt" path="res://assety/sounds/freesound_community-analog-crt-tv-electronic-static-noise-60428.mp3" id="7_aqkbm"]
+[ext_resource type="AudioStream" uid="uid://bsobab13cygfm" path="res://assety/sounds/First computer to sing - Daisy Bell [41U78QP8nBk].mp3" id="7_htbyj"]
+
+[sub_resource type="ViewportTexture" id="ViewportTexture_6stln"]
+viewport_path = NodePath("MeshInstance3D/SubViewport")
+
+[sub_resource type="ViewportTexture" id="ViewportTexture_mlqhw"]
+viewport_path = NodePath("MeshInstance3D/SubViewport2")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_71ncn"]
+resource_local_to_scene = true
+albedo_color = Color(0, 0, 0, 1)
+albedo_texture = SubResource("ViewportTexture_6stln")
+emission_enabled = true
+emission_texture = SubResource("ViewportTexture_mlqhw")
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_y3imr"]
+resource_local_to_scene = true
+material = SubResource("StandardMaterial3D_71ncn")
+
+[sub_resource type="ViewportTexture" id="ViewportTexture_7rrl4"]
+viewport_path = NodePath("MeshInstance3D/SubViewport")
+
+[sub_resource type="Environment" id="Environment_6stln"]
+background_mode = 1
+
+[sub_resource type="Animation" id="Animation_aqkbm"]
+resource_name = "RESET"
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("AudioStreamPlayer1:volume_db")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [-45.0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("AudioStreamPlayer2:volume_db")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [-50.0]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Camera3D:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, 1.5324136, 0)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Camera3D:rotation")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(1.1225435, 0, 0)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Camera3D:fov")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [88.7]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("MeshInstance3D/SubViewport2/VideoStreamPlayer:modulate")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("MeshInstance3D/SubViewport/RichTextLabel:text")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": ["     ##                                 
+      ####                              
+       #####                            
+       #####                            
+        ######                          
+             ┌┐                         
+             ││ ┌─────────┐             
+           ┌╶┘└╶│Sikodem's│╶╶┐          
+           ╎++++└─────────┘++╎          
+           ╎+++++++++++++++++╎          
+∧  ∧  ∧  ∧ ╎++++┌───┬───┐++++╎ ∧  ∧  ∧  
+┼──┼──┼──┼ ╎++++│   │   │++++╎ ┼──┼──┼──
+│  │  │  │ ╎++++│   ├┐  │++++╎ │  │  │  
+┼──┼──┼──┼ ╎++++│   │   │++++╎ ┼──┼──┼──
+│  │  │  │ └╶╶╶╶┴───┴───┴╶╶╶╶┘ │  │  │  
+########################################
+                                        
+---  ---  ---  ---  ---  ---  ---  ---  
+                                        
+########################################"]
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("MeshInstance3D/SubViewport/RichTextLabel:modulate")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1.8247963, 1.8247963, 1.8247963, 0)]
+}
+tracks/8/type = "value"
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/path = NodePath("Camera3D/SpotLight3D:light_energy")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [4.47]
+}
+tracks/9/type = "value"
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/path = NodePath("FirstComputerToSingDaisyBell[41u78qp8nBk]:playing")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/10/type = "value"
+tracks/10/imported = false
+tracks/10/enabled = true
+tracks/10/path = NodePath("FirstComputerToSingDaisyBell[41u78qp8nBk]:volume_db")
+tracks/10/interp = 1
+tracks/10/loop_wrap = true
+tracks/10/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+tracks/11/type = "value"
+tracks/11/imported = false
+tracks/11/enabled = true
+tracks/11/path = NodePath("MeshInstance3D/SubViewport/RichTextLabel2:modulate")
+tracks/11/interp = 1
+tracks/11/loop_wrap = true
+tracks/11/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1.353256, 1.353256, 1.353256, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_htbyj"]
+resource_name = "intro"
+length = 15.235
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Camera3D:position")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0.79666674, 1.1666667, 1.57, 2.5),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Vector3(0, 1.5324136, 0), Vector3(0, 0.7355757, 0), Vector3(-0.17910159, -0.17845261, 0), Vector3(0, 0, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Camera3D:rotation")
+tracks/1/interp = 2
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0.79666674, 1.1666667, 1.57, 2.5),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Vector3(1.1225435, 0, 0), Vector3(0.31191707, -0.03401044, -0.110416986), Vector3(-0.075049154, 0.15707964, 0), Vector3(0, 0, 0)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Camera3D:fov")
+tracks/2/interp = 2
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0.79666674, 1.1666667, 1.57, 2.5, 13.466666, 13.7266655, 14.816666),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [88.7, 88.7, 88.7, 88.7, 88.7, 88.7, 1.0]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("AudioStreamPlayer1:volume_db")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 0.79666674, 13.7266655, 14.816666),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [-44.595, 0.0, 0.0, -80.0]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("AudioStreamPlayer2:volume_db")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0, 0.79666674, 3.38, 3.76),
+"transitions": PackedFloat32Array(1, 1, 1, 1217.748),
+"update": 0,
+"values": [-49.456, -20.236, -20.236, -80.0]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("MeshInstance3D/SubViewport2/VideoStreamPlayer:modulate")
+tracks/5/interp = 0
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0.79666674, 3.38, 3.8),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("MeshInstance3D/SubViewport/RichTextLabel:text")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0.79666674, 5.8923435, 9.933333),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": ["                                        
+                                        
+                                        
+                                        
+                                        
+             ┌┐                         
+             ││ ┌─────────┐             
+           ┌╶┘└╶│Sikodem's│╶╶┐          
+           ╎++++└─────────┘++╎          
+           ╎+++++++++++++++++╎          
+∧  ∧  ∧  ∧ ╎++++┌───┬───┐++++╎ ∧  ∧  ∧  
+┼──┼──┼──┼ ╎++++│   │   │++++╎ ┼──┼──┼──
+│  │  │  │ ╎++++│   ├┐  │++++╎ │  │  │  
+┼──┼──┼──┼ ╎++++│   │   │++++╎ ┼──┼──┼──
+│  │  │  │ └╶╶╶╶┴───┴───┴╶╶╶╶┘ │  │  │  
+########################################
+                                        
+---  ---  ---  ---  ---  ---  ---  ---  
+                                        
+########################################
+", "                                        
+                                        
+                                        
+                                        
+                                        
+             ┌┐                         
+             ││ ┌─────────┐             
+           ┌╶┘└╶│Sikodem's│╶╶┐          
+           ╎++++└─────────┘++╎          
+           ╎+++++++++++++++++╎          
+∧  ∧  ∧  ∧ ╎++++┌───┬───┐++++╎ ∧  ∧  ∧  
+┼──┼──┼──┼ ╎++++│   │   │++++╎ ┼──┼──┼──
+│  │  │  │ ╎++++│   ├┐  │++++╎ │  │  │  
+┼──┼──┼──┼ ╎++++│   │   │++++╎ ┼──┼──┼──
+│  │  │  │ └╶╶╶╶┴───┴───┴╶╶╶╶┘ │  │  │  
+########################################
+                                        
+---  ---  ---  ---  ---  ---  ---  ---  
+                                        
+########################################
+", "                        ▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁ 
+                        ▏==CHAPTER 1==▕ 
+                        ▏▔▔▔▔▔▔▔▔▔▔▔▔▔▕ 
+                        ▏The beginning▕ 
+                        ▔▔▔▔▔▔▔▔▔▔▔▔▔▔▔ 
+             ┌┐                         
+             ││ ┌─────────┐             
+           ┌╶┘└╶│Sikodem's│╶╶┐          
+           ╎++++└─────────┘++╎          
+           ╎+++++++++++++++++╎          
+∧  ∧  ∧  ∧ ╎++++┌───┬───┐++++╎ ∧  ∧  ∧  
+┼──┼──┼──┼ ╎++++│   │   │++++╎ ┼──┼──┼──
+│  │  │  │ ╎++++│   ├┐  │++++╎ │  │  │  
+┼──┼──┼──┼ ╎++++│   │   │++++╎ ┼──┼──┼──
+│  │  │  │ └╶╶╶╶┴───┴───┴╶╶╶╶┘ │  │  │  
+########################################
+                                        
+---  ---  ---  ---  ---  ---  ---  ---  
+                                        
+########################################
+"]
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("MeshInstance3D/SubViewport/RichTextLabel:modulate")
+tracks/7/interp = 0
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(0, 3.61, 3.92),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Color(1.8247963, 1.8247963, 1.8247963, 0), Color(1.8247963, 1.8247963, 1.8247963, 0), Color(1.353256, 1.353256, 1.353256, 1)]
+}
+tracks/8/type = "value"
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/path = NodePath("Camera3D/SpotLight3D:light_energy")
+tracks/8/interp = 2
+tracks/8/loop_wrap = true
+tracks/8/keys = {
+"times": PackedFloat32Array(0, 13.736666, 14.826666),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [4.47, 4.47, 0.0]
+}
+tracks/9/type = "value"
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/path = NodePath("FirstComputerToSingDaisyBell[41u78qp8nBk]:playing")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/keys = {
+"times": PackedFloat32Array(0, 3.71, 4.3333335),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [false, false, true]
+}
+tracks/10/type = "value"
+tracks/10/imported = false
+tracks/10/enabled = true
+tracks/10/path = NodePath("FirstComputerToSingDaisyBell[41u78qp8nBk]:volume_db")
+tracks/10/interp = 1
+tracks/10/loop_wrap = true
+tracks/10/keys = {
+"times": PackedFloat32Array(0, 13.4366665, 14.966666),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [0.0, 0.0, -80.0]
+}
+tracks/11/type = "value"
+tracks/11/imported = false
+tracks/11/enabled = true
+tracks/11/path = NodePath("MeshInstance3D/SubViewport/RichTextLabel2:modulate")
+tracks/11/interp = 0
+tracks/11/loop_wrap = true
+tracks/11/keys = {
+"times": PackedFloat32Array(0, 3.92),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1.353256, 1.353256, 1.353256, 0), Color(1.353256, 1.353256, 1.353256, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_jh8n7"]
+_data = {
+&"RESET": SubResource("Animation_aqkbm"),
+&"intro": SubResource("Animation_htbyj")
+}
+
+[sub_resource type="Animation" id="Animation_jh8n7"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("MeshInstance3D/SubViewport/RichTextLabel2:text")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": ["     ##                                 
+      ####                              
+       #####                            
+       #####                            
+        ######                          
+                                        
+                                        
+                                        
+                                        
+                                        
+                                        
+                                        
+                                        
+                                        
+                                        
+                                        
+                                        
+                                        
+                                        
+                                        
+"]
+}
+
+[sub_resource type="Animation" id="Animation_ukbqd"]
+resource_name = "smoke anim"
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("MeshInstance3D/SubViewport/RichTextLabel2:text")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.25, 0.5, 0.75, 1),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 1,
+"values": ["     ##                                 
+      ####                              
+       #####                            
+       #####                            
+        ######                          
+                                        
+                                        
+                                        
+                                        
+                                        
+                                        
+                                        
+                                        
+                                        
+                                        
+                                        
+                                        
+                                        
+                                        
+                                        
+", "         ##                             
+        ###                             
+       ######                           
+       #######                          
+        ######                          
+                                        
+                                        
+                                        
+                                        
+                                        
+                                        
+                                        
+                                        
+                                        
+                                        
+                                        
+                                        
+                                        
+                                        
+                                        
+", "            ####                        
+          ######                        
+         ########                       
+        ########                        
+        ######                          
+                                        
+                                        
+                                        
+                                        
+                                        
+                                        
+                                        
+                                        
+                                        
+                                        
+                                        
+                                        
+                                        
+                                        
+                                        
+", "         ##                             
+        ###                             
+       ######                           
+       #######                          
+        ######                          
+                                        
+                                        
+                                        
+                                        
+                                        
+                                        
+                                        
+                                        
+                                        
+                                        
+                                        
+                                        
+                                        
+                                        
+                                        
+", "     ##                                 
+      ####                              
+       #####                            
+       #####                            
+        ######                          
+                                        
+                                        
+                                        
+                                        
+                                        
+                                        
+                                        
+                                        
+                                        
+                                        
+                                        
+                                        
+                                        
+                                        
+                                        
+"]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_t67b5"]
+_data = {
+&"RESET": SubResource("Animation_jh8n7"),
+&"smoke anim": SubResource("Animation_ukbqd")
+}
+
+[node name="Asciiintro" type="Node3D" unique_id=516634091]
+script = ExtResource("1_mlqhw")
+
+[node name="Camera3D" type="Camera3D" parent="." unique_id=718813993]
+transform = Transform3D(1, 0, 0, 0, 0.43339166, -0.90120566, 0, 0.90120566, 0.43339166, 0, 1.5324136, 0)
+current = true
+fov = 88.7
+size = 2.0
+
+[node name="SpotLight3D" type="SpotLight3D" parent="Camera3D" unique_id=1579951513]
+light_energy = 4.47
+light_indirect_energy = 0.885
+light_projector = ExtResource("1_y3imr")
+light_size = 0.29
+light_specular = 2.15
+shadow_enabled = true
+spot_range = 6.85
+
+[node name="AudioListener3D" type="AudioListener3D" parent="Camera3D" unique_id=1816408727]
+current = true
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=208915479]
+transform = Transform3D(0.645, 0, 0, 0, -2.8193845e-08, -0.645, 0, 0.645, -2.8193845e-08, -0.09503102, 0, -1.2349604)
+mesh = SubResource("PlaneMesh_y3imr")
+
+[node name="SubViewport" type="SubViewport" parent="MeshInstance3D" unique_id=396003538]
+
+[node name="ColorRect" type="ColorRect" parent="MeshInstance3D/SubViewport" unique_id=639811579]
+offset_right = 512.0
+offset_bottom = 512.0
+color = Color(0, 0, 0, 1)
+
+[node name="RichTextLabel" type="RichTextLabel" parent="MeshInstance3D/SubViewport" unique_id=94617021]
+modulate = Color(1.8247963, 1.8247963, 1.8247963, 0)
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -200.04498
+offset_top = -221.8075
+offset_right = 200.04498
+offset_bottom = 221.8075
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset_ratio = Vector2(0.5, 0.5)
+theme_override_fonts/normal_font = ExtResource("1_6stln")
+text = "     ##                                 
+      ####                              
+       #####                            
+       #####                            
+        ######                          
+             ┌┐                         
+             ││ ┌─────────┐             
+           ┌╶┘└╶│Sikodem's│╶╶┐          
+           ╎++++└─────────┘++╎          
+           ╎+++++++++++++++++╎          
+∧  ∧  ∧  ∧ ╎++++┌───┬───┐++++╎ ∧  ∧  ∧  
+┼──┼──┼──┼ ╎++++│   │   │++++╎ ┼──┼──┼──
+│  │  │  │ ╎++++│   ├┐  │++++╎ │  │  │  
+┼──┼──┼──┼ ╎++++│   │   │++++╎ ┼──┼──┼──
+│  │  │  │ └╶╶╶╶┴───┴───┴╶╶╶╶┘ │  │  │  
+########################################
+                                        
+---  ---  ---  ---  ---  ---  ---  ---  
+                                        
+########################################"
+
+[node name="RichTextLabel2" type="RichTextLabel" parent="MeshInstance3D/SubViewport" unique_id=752362599]
+modulate = Color(1.353256, 1.353256, 1.353256, 0)
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -200.04498
+offset_top = -221.8075
+offset_right = 200.04498
+offset_bottom = 221.8075
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset_ratio = Vector2(0.5, 0.5)
+theme_override_fonts/normal_font = ExtResource("1_6stln")
+text = "     ##                                 
+      ####                              
+       #####                            
+       #####                            
+        ######                          
+                                        
+                                        
+                                        
+                                        
+                                        
+                                        
+                                        
+                                        
+                                        
+                                        
+                                        
+                                        
+                                        
+                                        
+                                        
+"
+
+[node name="SubViewport2" type="SubViewport" parent="MeshInstance3D" unique_id=1259336688]
+
+[node name="TextureRect" type="TextureRect" parent="MeshInstance3D/SubViewport2" unique_id=1595978568]
+offset_right = 40.0
+offset_bottom = 40.0
+texture = SubResource("ViewportTexture_7rrl4")
+
+[node name="VideoStreamPlayer" type="VideoStreamPlayer" parent="MeshInstance3D/SubViewport2" unique_id=665699453]
+offset_right = 40.0
+offset_bottom = 40.0
+stream = ExtResource("3_mlqhw")
+speed_scale = 20.19
+autoplay = true
+loop = true
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=1302642868]
+environment = SubResource("Environment_6stln")
+
+[node name="tv-poked" parent="." unique_id=1167985940 instance=ExtResource("3_wtwhr")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.10028955, 0, -1.8668237)
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=1691629341]
+modulate = Color(1, 1, 1, 0)
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -9641.5
+offset_top = -4790.5
+offset_right = 9641.5
+offset_bottom = 4790.5
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)
+
+[node name="AudioStreamPlayer2" type="AudioStreamPlayer3D" parent="." unique_id=1069098536]
+transform = Transform3D(-0.67377377, 0, 0.7389377, 0, 1, 0, -0.7389377, 0, -0.67377377, 0.8391877, -0.2192471, -1.0745612)
+stream = ExtResource("6_7rrl4")
+volume_db = -50.0
+pitch_scale = 0.69
+autoplay = true
+emission_angle_enabled = true
+emission_angle_degrees = 43.0
+
+[node name="FirstComputerToSingDaisyBell[41u78qp8nBk]" type="AudioStreamPlayer3D" parent="." unique_id=90713851]
+transform = Transform3D(-0.7891055, -6.5939744e-08, 0.6142576, -0.026215166, 0.99908876, -0.03367731, -0.613698, -0.04267776, -0.7883866, 0.81608963, -0.20003265, -1.0050545)
+stream = ExtResource("7_htbyj")
+emission_angle_enabled = true
+
+[node name="AudioStreamPlayer1" type="AudioStreamPlayer3D" parent="." unique_id=1658773730]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.023254812, 0, -1.67172)
+stream = ExtResource("7_aqkbm")
+volume_db = -45.0
+autoplay = true
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=914350809]
+libraries/ = SubResource("AnimationLibrary_jh8n7")
+
+[node name="AnimationPlayer2" type="AnimationPlayer" parent="." unique_id=383918782]
+libraries/ = SubResource("AnimationLibrary_t67b5")
+
+[node name="Label" type="Label" parent="." unique_id=507312743]
+visible = false
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -79.0
+offset_top = -24.5
+offset_right = 79.0
+offset_bottom = 24.5
+grow_horizontal = 2
+grow_vertical = 2
+text = "ANIM COMPLETE
+ADD CHANGE SCENE"
+horizontal_alignment = 1
+vertical_alignment = 1

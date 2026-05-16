@@ -7,10 +7,22 @@ const MOUSE_SENSITIVITY   = 0.003
 const STEPSOUND_DELAY_MIN = 0.4
 const STEPSOUND_DELAY_MAX = 0.5
 
+<<<<<<< HEAD
 const HAND_BOB_SPEED      = 9.0
 const HAND_BOB_AMOUNT_Y   = 0.018
 const HAND_BOB_AMOUNT_X   = 0.009
 const HAND_REST_POS       = Vector3(0.0, 0.0, 0.0)
+=======
+@onready var camera = $Camera3D # Pobiera referencję do kamery
+@onready var stepemitter = $StepPlayer
+@onready var jumpemitter = $JumpPlayer
+@onready var nsactivateemitter = $NSActivate
+@onready var uiNightshot = $UI/CAMNS
+@onready var uiNightshotShader = $UI/NightshotShader
+@onready var nightshotLight = $NSLight
+@onready var flashLight = $Camera3D/FlashLight
+@onready var noiseFX = $UI/VideoStreamPlayer
+>>>>>>> 3a83e685ffc216c12afb7be672a567eac10d2c49
 
 const HAND_SWAY_AMOUNT    = 0.0025
 const HAND_SWAY_SPEED     = 6.0
@@ -60,16 +72,29 @@ func _input(event: InputEvent) -> void:
 				MOUSE_BUTTON_RIGHT:
 					uiNightshot.visible       = true
 					uiNightshotShader.visible = true
+<<<<<<< HEAD
 					nightshotLight.visible    = true
 					flashLight.visible        = false
 					nsactivateemitter.play()
+=======
+					nightshotLight.visible = true
+					flashLight.visible = false
+					noiseFX.visible = true
+					nsactivateemitter.play(0.15)
+>>>>>>> 3a83e685ffc216c12afb7be672a567eac10d2c49
 		else:
 			match event.button_index:
 				MOUSE_BUTTON_RIGHT:
 					uiNightshot.visible       = false
 					uiNightshotShader.visible = false
+<<<<<<< HEAD
 					nightshotLight.visible    = false
 					flashLight.visible        = true
+=======
+					nightshotLight.visible = false
+					flashLight.visible = true
+					noiseFX.visible = false
+>>>>>>> 3a83e685ffc216c12afb7be672a567eac10d2c49
 					nsactivateemitter.stop()
 func _physics_process(delta: float) -> void:
 	var size := get_viewport().get_visible_rect().size
