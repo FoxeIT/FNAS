@@ -8,6 +8,7 @@
 [ext_resource type="FontFile" uid="uid://dk0avwccxi4sr" path="res://assety/VT323-Regular.ttf" id="5_cxr5p"]
 [ext_resource type="Shader" uid="uid://7i8krnnwc6vq" path="res://assety/nightshot.gdshader" id="7_dtqjt"]
 [ext_resource type="VideoStream" uid="uid://jx63gx0audx1" path="res://assety/27519-364430915.ogv" id="8_5ncpa"]
+[ext_resource type="PackedScene" uid="uid://b0s3ni5qjbfwv" path="res://assety/uploads_files_4367404_hand.glb" id="10_3tkgg"]
 [ext_resource type="Script" uid="uid://b5hbf7c8kjgg" path="res://Scenes/mainmenu/mainmenustaticfx.gd" id="10_hp6x6"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_xhfnw"]
@@ -61,11 +62,19 @@ current = true
 
 [node name="LeftHand" type="MeshInstance3D" parent="Camera3D/HandsRoot" unique_id=40364327]
 transform = Transform3D(0.10687668, 0, 0, 0, 0.17359886, 0, 0, 0, 1, -0.4185335, -0.1072216, -0.58602333)
+visible = false
 mesh = SubResource("BoxMesh_dtqjt")
 
 [node name="RightHand" type="MeshInstance3D" parent="Camera3D/HandsRoot" unique_id=1185329314]
 transform = Transform3D(0.13549596, 0, 0, 0, 0.1911659, 0, 0, 0, 1, 0.41037858, -0.14147305, -0.59133446)
+visible = false
 mesh = SubResource("BoxMesh_dtqjt")
+
+[node name="idk" parent="Camera3D/HandsRoot" unique_id=1375659435 instance=ExtResource("10_3tkgg")]
+transform = Transform3D(0.007465977, -0.12263965, 0, 0.086678, 0.01056352, 0, 0, 0, 0.08667177, -0.36354572, -0.093844414, -0.6640385)
+
+[node name="idk2" parent="Camera3D/HandsRoot" unique_id=1605654763 instance=ExtResource("10_3tkgg")]
+transform = Transform3D(0.007465977, -0.12263965, 0, 0.086678, 0.01056352, 0, 0, 0, 0.08667177, 0.16102822, -0.093844414, -0.65511984)
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Camera3D/HandsRoot" unique_id=3352684]
 

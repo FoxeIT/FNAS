@@ -37,8 +37,8 @@ var _current_anim : String  = ""
 
 func _ready() -> void:
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
-	_set_hand_layer($Camera3D/HandsRoot/RightHand, 2)
-	_set_hand_layer($Camera3D/HandsRoot/LeftHand,  2)
+	_set_hand_layer($Camera3D/HandsRoot/idk2, 2)
+	_set_hand_layer($Camera3D/HandsRoot/idk,  2)
 	_play_anim("idle")
 
 func _set_hand_layer(mesh: MeshInstance3D, layer: int) -> void:
