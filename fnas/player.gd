@@ -40,7 +40,7 @@ func _input(event):
 					nightshotLight.visible = true
 					flashLight.visible = false
 					noiseFX.visible = true
-					nsactivateemitter.play()
+					nsactivateemitter.play(0.15)
 		else:
 			match event.button_index:
 				2:

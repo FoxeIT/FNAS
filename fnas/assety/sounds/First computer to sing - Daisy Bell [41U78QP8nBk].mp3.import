@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://bsobab13cygfm"
+path="res://.godot/imported/First computer to sing - Daisy Bell [41U78QP8nBk].mp3-70a29d8e452c3dfcb86722cff9f74abe.mp3str"
+
+[deps]
+
+source_file="res://assety/sounds/First computer to sing - Daisy Bell [41U78QP8nBk].mp3"
+dest_files=["res://.godot/imported/First computer to sing - Daisy Bell [41U78QP8nBk].mp3-70a29d8e452c3dfcb86722cff9f74abe.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

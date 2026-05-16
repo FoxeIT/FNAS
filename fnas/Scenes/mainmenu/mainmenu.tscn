@@ -1,11 +1,10 @@
 [gd_scene format=3 uid="uid://v2lswew3h538"]
 
 [ext_resource type="Theme" uid="uid://cpk5qnd6e0h4v" path="res://assety/mainmenutheme.tres" id="1_6alau"]
-[ext_resource type="Texture2D" uid="uid://cfb4ycx8tluhu" path="res://assety/textures/worn_asphalt_ao_2k.jpg" id="1_m8kbx"]
-[ext_resource type="Environment" uid="uid://dcdroajb71khn" path="res://assety/mainmenuenv.tres" id="1_tudpt"]
+[ext_resource type="Texture2D" uid="uid://cx01poi2yhuj3" path="res://assety/textures/worn_asphalt_ao_2k.jpg" id="1_m8kbx"]
 [ext_resource type="VideoStream" uid="uid://jx63gx0audx1" path="res://assety/27519-364430915.ogv" id="2_7eu7h"]
-[ext_resource type="Texture2D" uid="uid://k2ucl5jj8wlf" path="res://assety/textures/worn_asphalt_nor_gl_2k.png" id="2_bs6s4"]
-[ext_resource type="Texture2D" uid="uid://kt5xahxupe1l" path="res://assety/textures/worn_asphalt_rough_2k.png" id="2_it37i"]
+[ext_resource type="Texture2D" uid="uid://b2ljssfccm5gj" path="res://assety/textures/worn_asphalt_nor_gl_2k.png" id="2_bs6s4"]
+[ext_resource type="Texture2D" uid="uid://c13g8qosri4k5" path="res://assety/textures/worn_asphalt_rough_2k.png" id="2_it37i"]
 [ext_resource type="Texture2D" uid="uid://doq1k5rij0bsl" path="res://assety/textures/photo-static-texture-pattern.png" id="2_ny5vv"]
 [ext_resource type="Script" uid="uid://b5hbf7c8kjgg" path="res://Scenes/mainmenu/mainmenustaticfx.gd" id="3_2drq2"]
 [ext_resource type="Script" uid="uid://cbnqdardvm8a8" path="res://Scenes/mainmenu/photo_static_texture_pattern.gd" id="3_3haqi"]
@@ -15,6 +14,7 @@
 [ext_resource type="AudioStream" uid="uid://cly7w45hfj224" path="res://assety/sounds/dragon-studio-fire-sounds-405444.mp3" id="10_d6t2i"]
 [ext_resource type="ArrayMesh" uid="uid://b7i4dpv00y341" path="res://assety/title_school.obj" id="11_2drq2"]
 [ext_resource type="AudioStream" uid="uid://csksea732rud1" path="res://assety/sounds/dragon-studio-tv-static-323620.mp3" id="14_3tu6g"]
+[ext_resource type="AudioStream" uid="uid://bkivv7r6pdke" path="res://assety/sounds/Lights Out.mp3" id="15_h5iq1"]
 [ext_resource type="Script" uid="uid://4qy6l6n7txf8" path="res://Scenes/mainmenu/introanim.gd" id="16_o1utx"]
 [ext_resource type="Texture2D" uid="uid://bd3uf7csoixvc" path="res://assety/textures/logo_intro.png" id="17_8rhrt"]
 
@@ -26,6 +26,7 @@ roughness_texture = ExtResource("2_it37i")
 normal_enabled = true
 normal_scale = 4.58
 normal_texture = ExtResource("2_bs6s4")
+uv1_scale = Vector3(60, 60, 60)
 
 [sub_resource type="BoxMesh" id="BoxMesh_6vml4"]
 
@@ -59,7 +60,7 @@ albedo_color = Color(0.44634718, 0.5153812, 0.53286177, 1)
 metallic = 0.25
 
 [sub_resource type="Animation" id="Animation_8rhrt"]
-length = 0.001
+length = 0.16666667
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -212,7 +213,7 @@ grow_vertical = 2
 theme = ExtResource("1_6alau")
 
 [node name="VideoStreamPlayer" type="VideoStreamPlayer" parent="." unique_id=191967230]
-modulate = Color(1, 1, 1, 0.38039216)
+modulate = Color(1, 1, 1, 0.25882354)
 layout_mode = 1
 offset_right = 1152.0
 offset_bottom = 648.0
@@ -292,15 +293,15 @@ fov = 65.6
 far = 135.7
 
 [node name="AudioListener3D" type="AudioListener3D" parent="Node3D/Camera3D" unique_id=2132274045]
+current = true
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Node3D" unique_id=521757497]
-transform = Transform3D(13.398093, 0, 0, 0, 1, 0, 0, 0, 13.400781, -2.6423366, -0.7317982, -4.8917885)
+transform = Transform3D(284.32278, 0, 0, 0, 1, 0, 0, 0, 246.20074, -92.28251, -0.77806187, -77.40387)
 material_override = SubResource("StandardMaterial3D_bs6s4")
 lod_bias = 1.136
 mesh = SubResource("BoxMesh_6vml4")
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="Node3D" unique_id=1141254968]
-environment = ExtResource("1_tudpt")
 
 [node name="SpotLight3D" type="SpotLight3D" parent="Node3D" unique_id=1078064712]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.5309417)
@@ -321,22 +322,23 @@ trail_lifetime = 5.75
 process_material = SubResource("ParticleProcessMaterial_3haqi")
 draw_pass_1 = SubResource("QuadMesh_7yfny")
 
-[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="Node3D" unique_id=381181431]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.2079311, 0.5081172)
-stream = ExtResource("10_d6t2i")
-volume_db = -15.437
-autoplay = true
-
 [node name="School" type="MeshInstance3D" parent="Node3D" unique_id=426764887]
-transform = Transform3D(0.049978405, 0, -0.0014693527, 0, 0.05, 0, 0.0014693527, 0, 0.049978405, -11.617303, -0.22239065, -17.019022)
+transform = Transform3D(0.049978405, 0, -0.0014693527, 0, 0.05, 0, 0.0014693527, 0, 0.049978405, -11.617303, -0.36025, -17.019022)
 material_override = SubResource("StandardMaterial3D_2drq2")
 mesh = ExtResource("11_2drq2")
 
-[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=727916769]
+[node name="AudioStreamPlayer" type="AudioStreamPlayer3D" parent="." unique_id=2128915509]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.44345164)
+stream = ExtResource("10_d6t2i")
 volume_db = -80.0
 autoplay = true
 
-[node name="AudioStreamPlayer2" type="AudioStreamPlayer" parent="." unique_id=1460395275]
+[node name="AudioStreamPlayer3" type="AudioStreamPlayer" parent="." unique_id=649903876]
+stream = ExtResource("15_h5iq1")
+volume_db = -5.38
+autoplay = true
+
+[node name="AudioStreamPlayer2" type="AudioStreamPlayer" parent="." unique_id=1806438886]
 stream = ExtResource("14_3tu6g")
 volume_db = -80.0
 pitch_scale = 0.69
