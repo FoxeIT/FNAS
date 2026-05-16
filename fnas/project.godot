@@ -20,6 +20,10 @@ run/main_scene="uid://v2lswew3h538"
 config/features=PackedStringArray("4.6", "Forward Plus")
 config/icon="uid://0g8bxreg2021"
 
+[editor_plugins]
+
+enabled=PackedStringArray("res://addons/terrain_3d/plugin.cfg")
+
 [input]
 
 ui_left={
