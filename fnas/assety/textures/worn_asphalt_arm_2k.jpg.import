@@ -3,16 +3,16 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://esggujyrls0v"
-path.etc2="res://.godot/imported/worn_asphalt_arm_2k.jpg-875b2e2f22adbe2302d4d6ac8bac79d2.etc2.ctex"
+path.s3tc="res://.godot/imported/worn_asphalt_arm_2k.jpg-875b2e2f22adbe2302d4d6ac8bac79d2.s3tc.ctex"
 metadata={
-"imported_formats": ["etc2_astc"],
+"imported_formats": ["s3tc_bptc"],
 "vram_texture": true
 }
 
 [deps]
 
 source_file="res://assety/textures/worn_asphalt_arm_2k.jpg"
-dest_files=["res://.godot/imported/worn_asphalt_arm_2k.jpg-875b2e2f22adbe2302d4d6ac8bac79d2.etc2.ctex"]
+dest_files=["res://.godot/imported/worn_asphalt_arm_2k.jpg-875b2e2f22adbe2302d4d6ac8bac79d2.s3tc.ctex"]
 
 [params]
 

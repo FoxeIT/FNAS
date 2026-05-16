@@ -3,16 +3,16 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://ckp1dwy5wddkw"
-path.etc2="res://.godot/imported/qwantani_moonrise_puresky_4k.png-d7f447c5cd240451b7fb39debb252c04.etc2.ctex"
+path.s3tc="res://.godot/imported/qwantani_moonrise_puresky_4k.png-d7f447c5cd240451b7fb39debb252c04.s3tc.ctex"
 metadata={
-"imported_formats": ["etc2_astc"],
+"imported_formats": ["s3tc_bptc"],
 "vram_texture": true
 }
 
 [deps]
 
 source_file="res://assety/textures/qwantani_moonrise_puresky_4k.png"
-dest_files=["res://.godot/imported/qwantani_moonrise_puresky_4k.png-d7f447c5cd240451b7fb39debb252c04.etc2.ctex"]
+dest_files=["res://.godot/imported/qwantani_moonrise_puresky_4k.png-d7f447c5cd240451b7fb39debb252c04.s3tc.ctex"]
 
 [params]
 
