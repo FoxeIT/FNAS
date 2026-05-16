@@ -3,6 +3,7 @@
 [ext_resource type="PackedScene" uid="uid://m3uvedbq737d" path="res://Player.tscn" id="1_xv8uw"]
 [ext_resource type="Environment" uid="uid://dodbf8ogupn4c" path="res://assety/testenv.tres" id="2_rwruy"]
 [ext_resource type="Texture2D" uid="uid://c7eipngnhajl3" path="res://assety/image.jpg" id="2_wp7sn"]
+[ext_resource type="Script" uid="uid://c7wwiclbeu0co" path="res://Scenes/door.gd" id="4_rdsfu"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_xv8uw"]
 
@@ -27,6 +28,12 @@ albedo_color = Color(0.2695021, 0.270078, 0.37056863, 1)
 [sub_resource type="BoxMesh" id="BoxMesh_rwruy"]
 material = SubResource("StandardMaterial3D_xv8uw")
 
+[sub_resource type="BoxMesh" id="BoxMesh_rdsfu"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_u8edb"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_rdsfu"]
+
 [node name="Biggayytest" type="Node3D" unique_id=1647491937]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.011991024, 0, 0)
 
@@ -42,6 +49,19 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -4.213622, 0)
 shape = SubResource("BoxShape3D_xv8uw")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="StaticBody3D3" unique_id=294611235]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -4.210307, 0)
+mesh = SubResource("BoxMesh_wp7sn")
+skin = SubResource("Skin_rwruy")
+
+[node name="StaticBody3D4" type="StaticBody3D" parent="." unique_id=1417206219]
+transform = Transform3D(7.966189, 0, 0, 0, 1.2500067, 0, 0, 0, 1.0819868, 2.4406574, 7.34951, -5.518387)
+physics_material_override = SubResource("PhysicsMaterial_xv8uw")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D4" unique_id=449237029]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -4.213622, 0)
+shape = SubResource("BoxShape3D_xv8uw")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="StaticBody3D4" unique_id=2142978868]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -4.210307, 0)
 mesh = SubResource("BoxMesh_wp7sn")
 skin = SubResource("Skin_rwruy")
@@ -82,3 +102,58 @@ light_energy = 9.282
 light_indirect_energy = 2.778
 omni_range = 5.833
 omni_attenuation = 0.98
+
+[node name="Door" type="Node3D" parent="." unique_id=1018908574]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.938857, 3.9053392, 6.4348145)
+script = ExtResource("4_rdsfu")
+
+[node name="HingePoint" type="Node3D" parent="Door" unique_id=1174648090]
+
+[node name="DoorMesh" type="MeshInstance3D" parent="Door/HingePoint" unique_id=1280981791]
+transform = Transform3D(1, 0, 0, 0, 7.2502646, 0, 0, 0, 3.858169, 0.5, 0, 0)
+mesh = SubResource("BoxMesh_rdsfu")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Door/HingePoint/DoorMesh" unique_id=1289060191]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Door/HingePoint/DoorMesh/StaticBody3D" unique_id=1549521855]
+shape = SubResource("BoxShape3D_u8edb")
+
+[node name="InteractArea" type="Area3D" parent="Door" unique_id=776553799]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Door/InteractArea" unique_id=1160168946]
+transform = Transform3D(8.789858, 0, 0, 0, 15.293941, 0, 0, 0, 5.0912166, 0, -3.1060848, 0)
+shape = SubResource("BoxShape3D_rdsfu")
+
+[node name="Label3D" type="Label3D" parent="Door" unique_id=954673905]
+transform = Transform3D(-0.11244017, 0, -0.9936585, 0, 1, 0, 0.9936585, 0, -0.11244017, -0.46260834, 0.2365489, 0.33851528)
+text = "prerss e u idiot"
+
+[node name="Label3D" type="Label3D" parent="Door/Label3D" unique_id=931116012]
+transform = Transform3D(-0.97942394, 0, -0.20181298, 0, 1, 0, 0.20181298, 0, -0.97942394, -0.67421246, 0.2365489, -1.5314713)
+text = "prerss e u idiot"
+
+[node name="StaticBody3D5" type="StaticBody3D" parent="." unique_id=763701201]
+transform = Transform3D(0.34677976, 0, -3.0746891, 0, 5.2268143, 0, 12.193795, 0, 0.08744119, 8.637444, 24.931604, -1.8861659)
+physics_material_override = SubResource("PhysicsMaterial_xv8uw")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D5" unique_id=789966778]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -4.213622, 0)
+shape = SubResource("BoxShape3D_xv8uw")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="StaticBody3D5" unique_id=1985602412]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -4.210307, 0)
+mesh = SubResource("BoxMesh_wp7sn")
+skin = SubResource("Skin_rwruy")
+
+[node name="StaticBody3D6" type="StaticBody3D" parent="." unique_id=2092227764]
+transform = Transform3D(0.34677976, 0, -3.0746891, 0, 5.2268143, 0, 12.193795, 0, 0.08744119, 8.637444, 24.931604, 15.044403)
+physics_material_override = SubResource("PhysicsMaterial_xv8uw")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D6" unique_id=1234290574]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -4.213622, 0)
+shape = SubResource("BoxShape3D_xv8uw")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="StaticBody3D6" unique_id=586992057]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -4.210307, 0)
+mesh = SubResource("BoxMesh_wp7sn")
+skin = SubResource("Skin_rwruy")
