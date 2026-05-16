@@ -5,6 +5,7 @@
 [ext_resource type="Texture2D" uid="uid://ckh1y8erv6yuv" path="res://assety/textures/flashlight.png" id="1_y3imr"]
 [ext_resource type="VideoStream" uid="uid://jx63gx0audx1" path="res://assety/27519-364430915.ogv" id="3_mlqhw"]
 [ext_resource type="PackedScene" uid="uid://7hbrudw5tija" path="res://assety/tv-poked.glb" id="3_wtwhr"]
+[ext_resource type="Texture2D" uid="uid://caevgyht3jxf0" path="res://assety/scanline.png" id="5_jh8n7"]
 [ext_resource type="AudioStream" uid="uid://csksea732rud1" path="res://assety/sounds/dragon-studio-tv-static-323620.mp3" id="6_7rrl4"]
 [ext_resource type="AudioStream" uid="uid://devtowrfw6flt" path="res://assety/sounds/freesound_community-analog-crt-tv-electronic-static-noise-60428.mp3" id="7_aqkbm"]
 [ext_resource type="AudioStream" uid="uid://bsobab13cygfm" path="res://assety/sounds/First computer to sing - Daisy Bell [41U78QP8nBk].mp3" id="7_htbyj"]
@@ -19,6 +20,9 @@ viewport_path = NodePath("MeshInstance3D/SubViewport2")
 resource_local_to_scene = true
 albedo_color = Color(0, 0, 0, 1)
 albedo_texture = SubResource("ViewportTexture_6stln")
+metallic = 0.8
+metallic_specular = 0.14
+roughness = 0.19
 emission_enabled = true
 emission_texture = SubResource("ViewportTexture_mlqhw")
 
@@ -570,6 +574,44 @@ _data = {
 &"smoke anim": SubResource("Animation_ukbqd")
 }
 
+[sub_resource type="Animation" id="Animation_t67b5"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("MeshInstance3D/SubViewport2/TextureRect2:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_q41y1"]
+resource_name = "scanline"
+length = 0.06
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("MeshInstance3D/SubViewport2/TextureRect2:position")
+tracks/0/interp = 0
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.03),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(0, 0), Vector2(0, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_5rb0p"]
+_data = {
+&"RESET": SubResource("Animation_t67b5"),
+&"scanline": SubResource("Animation_q41y1")
+}
+
 [node name="Asciiintro" type="Node3D" unique_id=516634091]
 script = ExtResource("1_mlqhw")
 
@@ -690,6 +732,11 @@ speed_scale = 20.19
 autoplay = true
 loop = true
 
+[node name="TextureRect2" type="TextureRect" parent="MeshInstance3D/SubViewport2" unique_id=1519044852]
+offset_right = 512.0
+offset_bottom = 512.0
+texture = ExtResource("5_jh8n7")
+
 [node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=1302642868]
 environment = SubResource("Environment_6stln")
 
@@ -736,6 +783,9 @@ libraries/ = SubResource("AnimationLibrary_jh8n7")
 
 [node name="AnimationPlayer2" type="AnimationPlayer" parent="." unique_id=383918782]
 libraries/ = SubResource("AnimationLibrary_t67b5")
+
+[node name="AnimationPlayer3" type="AnimationPlayer" parent="." unique_id=5697506]
+libraries/ = SubResource("AnimationLibrary_5rb0p")
 
 [node name="Label" type="Label" parent="." unique_id=507312743]
 visible = false
