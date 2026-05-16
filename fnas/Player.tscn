@@ -11,17 +11,9 @@
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_xhfnw"]
 
-<<<<<<< HEAD
 [sub_resource type="BoxMesh" id="BoxMesh_dtqjt"]
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_xhfnw"]
-albedo_color = Color(0.09019608, 1, 1, 1)
-
-[sub_resource type="BoxMesh" id="BoxMesh_xhfnw"]
-material = SubResource("StandardMaterial3D_xhfnw")
-=======
 [sub_resource type="CapsuleMesh" id="CapsuleMesh_5ncpa"]
->>>>>>> 3a83e685ffc216c12afb7be672a567eac10d2c49
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_5ncpa"]
 shader = ExtResource("7_dtqjt")
@@ -62,6 +54,7 @@ spot_range = 7.23
 spot_angle = 34.27
 
 [node name="AudioListener3D" type="AudioListener3D" parent="Camera3D" unique_id=449077230]
+current = true
 
 [node name="HandsRoot" type="Node3D" parent="Camera3D" unique_id=699810346]
 

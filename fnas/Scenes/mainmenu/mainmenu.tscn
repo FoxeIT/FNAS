@@ -2,10 +2,7 @@
 
 [ext_resource type="Theme" uid="uid://cpk5qnd6e0h4v" path="res://assety/mainmenutheme.tres" id="1_6alau"]
 [ext_resource type="Texture2D" uid="uid://cx01poi2yhuj3" path="res://assety/textures/worn_asphalt_ao_2k.jpg" id="1_m8kbx"]
-<<<<<<< HEAD
 [ext_resource type="Environment" uid="uid://dcdroajb71khn" path="res://assety/mainmenuenv.tres" id="1_tudpt"]
-=======
->>>>>>> 3a83e685ffc216c12afb7be672a567eac10d2c49
 [ext_resource type="VideoStream" uid="uid://jx63gx0audx1" path="res://assety/27519-364430915.ogv" id="2_7eu7h"]
 [ext_resource type="Texture2D" uid="uid://b2ljssfccm5gj" path="res://assety/textures/worn_asphalt_nor_gl_2k.png" id="2_bs6s4"]
 [ext_resource type="Texture2D" uid="uid://c13g8qosri4k5" path="res://assety/textures/worn_asphalt_rough_2k.png" id="2_it37i"]
@@ -306,6 +303,7 @@ lod_bias = 1.136
 mesh = SubResource("BoxMesh_6vml4")
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="Node3D" unique_id=1141254968]
+environment = ExtResource("1_tudpt")
 
 [node name="SpotLight3D" type="SpotLight3D" parent="Node3D" unique_id=1078064712]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.5309417)
