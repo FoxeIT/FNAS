@@ -80,7 +80,7 @@ mesh = SubResource("BoxMesh_wp7sn")
 skin = SubResource("Skin_rwruy")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="." unique_id=1541022219]
-transform = Transform3D(41.577385, 0, 0, 0, 1, 0, 0, 0, 28.66612, 0, 0, 0)
+transform = Transform3D(83.901764, 0, 0, 0, 1, 0, 0, 0, 86.25682, 0, 0, 0)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D" unique_id=847994105]
 shape = SubResource("BoxShape3D_xv8uw")
