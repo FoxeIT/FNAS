@@ -10,6 +10,8 @@
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_xhfnw"]
 
+[sub_resource type="BoxMesh" id="BoxMesh_dtqjt"]
+
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_xhfnw"]
 albedo_color = Color(0.09019608, 1, 1, 1)
 
@@ -55,6 +57,18 @@ spot_range = 7.23
 spot_angle = 34.27
 
 [node name="AudioListener3D" type="AudioListener3D" parent="Camera3D" unique_id=449077230]
+
+[node name="HandsRoot" type="Node3D" parent="Camera3D" unique_id=699810346]
+
+[node name="LeftHand" type="MeshInstance3D" parent="Camera3D/HandsRoot" unique_id=40364327]
+transform = Transform3D(0.10687668, 0, 0, 0, 0.17359886, 0, 0, 0, 1, -0.4185335, -0.1072216, -0.58602333)
+mesh = SubResource("BoxMesh_dtqjt")
+
+[node name="RightHand" type="MeshInstance3D" parent="Camera3D/HandsRoot" unique_id=1185329314]
+transform = Transform3D(0.13549596, 0, 0, 0, 0.1911659, 0, 0, 0, 1, 0.41037858, -0.14147305, -0.59133446)
+mesh = SubResource("BoxMesh_dtqjt")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Camera3D/HandsRoot" unique_id=3352684]
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=667114173]
 transform = Transform3D(1, 0, 0, 0, 1.633878, 0, 0, 0, 1, 0, 3.073519, 0)
