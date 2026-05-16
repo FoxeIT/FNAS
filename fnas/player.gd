@@ -12,7 +12,6 @@ const HAND_BOB_AMOUNT_Y   = 0.018
 const HAND_BOB_AMOUNT_X   = 0.009
 const HAND_REST_POS       = Vector3(0.0, 0.0, 0.0)
 
-
 const HAND_SWAY_AMOUNT    = 0.0025
 const HAND_SWAY_SPEED     = 6.0
 const HAND_LERP_SPEED     = 8.0
@@ -23,9 +22,9 @@ const HAND_LERP_SPEED     = 8.0
 @onready var nsactivateemitter : AudioStreamPlayer3D = $NSActivate
 @onready var uiNightshot       : Control             = $UI/CAMNS
 @onready var uiNightshotShader : Control             = $UI/NightshotShader
-@onready var nightshotLight                          = $NSLight            # kurwa typ musi  byc bo zaakceptuje kazdy node
-@onready var flashLight                              = $Camera3D/FlashLight # kurwa typ musi  byc bo zaakceptuje kazdy node
-@onready var noiseFX = $UI/VideoStreamPlayer
+@onready var nightshotLight                          = $NSLight
+@onready var flashLight                              = $Camera3D/FlashLight
+@onready var noiseFX                                 = $UI/VideoStreamPlayer
 @onready var hands_root  : Node3D          = $Camera3D/HandsRoot
 @onready var anim_player : AnimationPlayer = $Camera3D/HandsRoot/AnimationPlayer
 
@@ -47,7 +46,10 @@ func _set_hand_layer(mesh: MeshInstance3D, layer: int) -> void:
 	for i in range(1, 21):
 		mesh.set_layer_mask_value(i, false)
 	mesh.set_layer_mask_value(layer, true)
+
 func _input(event: InputEvent) -> void:
+	if Input.get_mouse_mode() == Input.MOUSE_MODE_VISIBLE:
+		return
 	if event is InputEventMouseMotion:
 		rotate_y(-event.relative.x * MOUSE_SENSITIVITY)
 		camera.rotate_x(-event.relative.y * MOUSE_SENSITIVITY)
@@ -61,19 +63,20 @@ func _input(event: InputEvent) -> void:
 				MOUSE_BUTTON_RIGHT:
 					uiNightshot.visible       = true
 					uiNightshotShader.visible = true
-					nightshotLight.visible = true
-					flashLight.visible = false
-					noiseFX.visible = true
+					nightshotLight.visible    = true
+					flashLight.visible        = false
+					noiseFX.visible           = true
 					nsactivateemitter.play(0.15)
 		else:
 			match event.button_index:
 				MOUSE_BUTTON_RIGHT:
 					uiNightshot.visible       = false
 					uiNightshotShader.visible = false
-					nightshotLight.visible = false
-					flashLight.visible = true
-					noiseFX.visible = false
+					nightshotLight.visible    = false
+					flashLight.visible        = true
+					noiseFX.visible           = false
 					nsactivateemitter.stop()
+
 func _physics_process(delta: float) -> void:
 	var size := get_viewport().get_visible_rect().size
 	uiNightshotShader.size = size
@@ -110,11 +113,11 @@ func _physics_process(delta: float) -> void:
 	_update_hands(delta, direction)
 	move_and_slide()
 	_was_on_floor = is_on_floor()
+
 func _update_hands(delta: float, direction: Vector3) -> void:
 	var on_floor  := is_on_floor()
 	var is_moving := direction.length() > 0.1 and on_floor
 
-	# 1. Bob
 	if is_moving:
 		_bob_time += delta * HAND_BOB_SPEED
 		var bob := Vector3(
@@ -127,7 +130,6 @@ func _update_hands(delta: float, direction: Vector3) -> void:
 		_bob_time = 0.0
 		hands_root.position = hands_root.position.lerp(HAND_REST_POS, delta * HAND_LERP_SPEED)
 
-	
 	var sway_target := Vector3(
 		-_mouse_delta.y * HAND_SWAY_AMOUNT,
 		-_mouse_delta.x * HAND_SWAY_AMOUNT,
@@ -136,7 +138,6 @@ func _update_hands(delta: float, direction: Vector3) -> void:
 	hands_root.rotation = hands_root.rotation.lerp(sway_target, delta * HAND_SWAY_SPEED)
 	_mouse_delta = Vector2.ZERO
 
-	# 3. Animations
 	if not on_floor and _was_on_floor:
 		_play_anim("jump")
 	elif on_floor and not _was_on_floor:
@@ -151,12 +152,12 @@ func _update_hands(delta: float, direction: Vector3) -> void:
 			else:
 				_play_anim("idle")
 
-func _play_anim(name: String) -> void:
-	if _current_anim == name:
+func _play_anim(anim_name: String) -> void:
+	if _current_anim == anim_name:
 		return
 	if anim_player == null:
 		return
-	if not anim_player.has_animation(name):
+	if not anim_player.has_animation(anim_name):
 		return
-	_current_anim = name
-	anim_player.play(name)
+	_current_anim = anim_name
+	anim_player.play(anim_name)

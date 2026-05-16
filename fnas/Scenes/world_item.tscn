@@ -1,0 +1,35 @@
+[gd_scene format=3 uid="uid://bnmw3ahnlfyfd"]
+
+[ext_resource type="Script" uid="uid://dcaud61russkt" path="res://Scenes/world_item.gd" id="1_aeu3x"]
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_3ryxv"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_aeu3x"]
+radius = 0.8774414
+height = 2.0649414
+
+[node name="WorldItem" type="Node3D" unique_id=1835328182]
+script = ExtResource("1_aeu3x")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=22714308]
+transform = Transform3D(-0.03911236, -0.5486045, 0, 0.5266934, -0.040739477, 0, 0, 0, 0.42326114, 0, 0, 0)
+mesh = SubResource("CapsuleMesh_3ryxv")
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="." unique_id=750410399]
+transform = Transform3D(-0.03733726, -0.23546827, 0, 0.5027896, -0.017485918, 0, 0, 0, 0.42326114, 0.2872205, 0, 0.29819787)
+mesh = SubResource("CapsuleMesh_3ryxv")
+
+[node name="MeshInstance3D3" type="MeshInstance3D" parent="." unique_id=1909269023]
+transform = Transform3D(-0.037314966, -0.20910999, 0, 0.5024894, -0.0155285485, 0, 0, 0, 0.42326114, 0.28912067, 0, -0.22101635)
+mesh = SubResource("CapsuleMesh_3ryxv")
+
+[node name="InteractArea" type="Area3D" parent="." unique_id=986394048]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="InteractArea" unique_id=1475362954]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.032470703, 0)
+shape = SubResource("CapsuleShape3D_aeu3x")
+
+[node name="PromptLabel" type="Label3D" parent="." unique_id=149833493]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.483109, 0)
+offset = Vector2(0, 1)
+billboard = 1

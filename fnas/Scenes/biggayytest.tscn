@@ -4,6 +4,7 @@
 [ext_resource type="Environment" uid="uid://dodbf8ogupn4c" path="res://assety/testenv.tres" id="2_rwruy"]
 [ext_resource type="Texture2D" uid="uid://c7eipngnhajl3" path="res://assety/image.jpg" id="2_wp7sn"]
 [ext_resource type="Script" uid="uid://c7wwiclbeu0co" path="res://Scenes/door.gd" id="4_rdsfu"]
+[ext_resource type="PackedScene" uid="uid://bnmw3ahnlfyfd" path="res://Scenes/world_item.tscn" id="5_u8edb"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_xv8uw"]
 
@@ -157,3 +158,6 @@ shape = SubResource("BoxShape3D_xv8uw")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -4.210307, 0)
 mesh = SubResource("BoxMesh_wp7sn")
 skin = SubResource("Skin_rwruy")
+
+[node name="WorldItem" parent="." unique_id=1835328182 instance=ExtResource("5_u8edb")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.3983412, 14.504402)

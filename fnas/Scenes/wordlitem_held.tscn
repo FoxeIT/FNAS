@@ -1,0 +1,18 @@
+[gd_scene format=3 uid="uid://bop140hknyqcv"]
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_bq7ae"]
+
+[node name="WordlitemHeld" type="Node3D" unique_id=2043984106]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.2039682)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=713026130]
+transform = Transform3D(0.20094228, 0, 0, 0, 0.1773363, 0, 0, 0, 0.18158819, 0, 0, 0)
+mesh = SubResource("CapsuleMesh_bq7ae")
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="." unique_id=1772509344]
+transform = Transform3D(0.13760422, 0, 0, 0, 0.085176244, 0, 0, 0, 0.15106678, -0.13558672, -0.07882631, 0)
+mesh = SubResource("CapsuleMesh_bq7ae")
+
+[node name="MeshInstance3D3" type="MeshInstance3D" parent="." unique_id=1766686531]
+transform = Transform3D(0.13760422, 0, 0, 0, 0.085176244, 0, 0, 0, 0.15106678, 0.13277854, -0.07882631, 0)
+mesh = SubResource("CapsuleMesh_bq7ae")
