@@ -23,4 +23,4 @@ func _pressed():
 			get_tree().quit(67)
 
 func _transition_end():
-	get_tree().change_scene_to_file("res://Scenes/biggayytest.tscn")
+	get_tree().change_scene_to_file("res://testy/asciiintro.tscn")
