@@ -5,8 +5,8 @@
 [sub_resource type="CapsuleMesh" id="CapsuleMesh_3ryxv"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_aeu3x"]
-radius = 0.8774414
-height = 2.0649414
+radius = 0.858
+height = 1.716
 
 [node name="WorldItem" type="Node3D" unique_id=1835328182]
 script = ExtResource("1_aeu3x")
@@ -26,10 +26,10 @@ mesh = SubResource("CapsuleMesh_3ryxv")
 [node name="InteractArea" type="Area3D" parent="." unique_id=986394048]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="InteractArea" unique_id=1475362954]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.032470703, 0)
 shape = SubResource("CapsuleShape3D_aeu3x")
 
 [node name="PromptLabel" type="Label3D" parent="." unique_id=149833493]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.483109, 0)
 offset = Vector2(0, 1)
 billboard = 1
+text = "tekst nad chujem!"

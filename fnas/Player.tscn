@@ -12,6 +12,7 @@
 [ext_resource type="PackedScene" uid="uid://b0s3ni5qjbfwv" path="res://assety/uploads_files_4367404_hand.glb" id="10_3tkgg"]
 [ext_resource type="Script" uid="uid://b5hbf7c8kjgg" path="res://Scenes/mainmenu/mainmenustaticfx.gd" id="10_hp6x6"]
 [ext_resource type="Script" uid="uid://b36evnky6x3r0" path="res://inventory_ui.gd" id="11_3tkgg"]
+[ext_resource type="Script" uid="uid://bdjp6ascd5syn" path="res://assety/panel.gd" id="13_oudfo"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_xhfnw"]
 
@@ -24,6 +25,7 @@ shader = ExtResource("7_dtqjt")
 
 [node name="CharacterBody3D" type="CharacterBody3D" unique_id=1152790506]
 script = ExtResource("1_xhfnw")
+metadata/_edit_vertical_guides_ = [185.0]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=976775647]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.0716476, 0)
@@ -48,10 +50,6 @@ light_angular_distance = 90.0
 [node name="Camera3D" type="Camera3D" parent="." unique_id=1833594380]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.44, 0)
 
-[node name="HandHolder" type="Node3D" parent="Camera3D" unique_id=2082328204 groups=["hand_holder"]]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.16801208, -0.013725996, -0.5206601)
-script = ExtResource("4_l6ohk")
-
 [node name="FlashLight" type="SpotLight3D" parent="Camera3D" unique_id=964406229]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.009, 0)
 light_energy = 3.077
@@ -69,21 +67,24 @@ current = true
 [node name="idk" parent="Camera3D/HandsRoot" unique_id=1375659435 instance=ExtResource("10_3tkgg")]
 transform = Transform3D(0.0074659716, -0.12263955, 0.00010740222, 0.08667799, 0.01056352, 0, -9.251717e-06, 0.00015197303, 0.0866717, -0.31879598, -0.093844414, -0.66168326)
 
+[node name="HandHolder" type="Node3D" parent="Camera3D/HandsRoot/idk" unique_id=2082328204 groups=["hand_holder"]]
+transform = Transform3D(0.9864121, 11.451991, -0.0012223464, -8.093913, 0.69716686, 0.010029851, 0.0142974295, 0, 11.537774, 1.3975372, -3.8829117, 1.6340542)
+script = ExtResource("4_l6ohk")
+
 [node name="idk2" parent="Camera3D/HandsRoot" unique_id=1605654763 instance=ExtResource("10_3tkgg")]
 transform = Transform3D(0.007466057, 0.12254608, 0.00014728827, 0.08667905, -0.010555475, -1.819142e-12, -1.2639817e-05, -0.00020746698, 0.08699987, 0.31416565, -0.093844414, -0.65511984)
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Camera3D/HandsRoot" unique_id=3352684]
 
 [node name="handsold" type="Node3D" parent="Camera3D" unique_id=1185635133]
+visible = false
 
 [node name="LeftHand" type="MeshInstance3D" parent="Camera3D/handsold" unique_id=40364327]
 transform = Transform3D(0.10687668, 0, 0, 0, 0.17359886, 0, 0, 0, 1, -0.4185335, -0.1072216, -0.58602333)
-visible = false
 mesh = SubResource("BoxMesh_dtqjt")
 
 [node name="RightHand" type="MeshInstance3D" parent="Camera3D/handsold" unique_id=1185329314]
 transform = Transform3D(0.13549596, 0, 0, 0, 0.1911659, 0, 0, 0, 1, 0.41037858, -0.14147305, -0.59133446)
-visible = false
 mesh = SubResource("BoxMesh_dtqjt")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=667114173]
@@ -103,6 +104,7 @@ volume_db = -15.439
 doppler_tracking = 2
 
 [node name="JumpPlayer" type="AudioStreamPlayer3D" parent="." unique_id=1251589545]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.2354112, 0)
 stream = ExtResource("4_e80uo")
 volume_db = 9.825
 
@@ -155,17 +157,23 @@ loop = true
 script = ExtResource("10_hp6x6")
 
 [node name="InventoryUI" type="Control" parent="UI" unique_id=47103962]
-anchors_preset = 0
-offset_right = 40.0
-offset_bottom = 40.0
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -40.0
+offset_top = -40.0
+grow_horizontal = 0
+grow_vertical = 0
 script = ExtResource("11_3tkgg")
 
 [node name="Panel" type="Panel" parent="UI/InventoryUI" unique_id=154565886]
-layout_mode = 0
-offset_left = 9.0
-offset_top = 577.0
-offset_right = 638.0
-offset_bottom = 636.0
+layout_mode = 1
+offset_right = 629.0
+offset_bottom = 59.000004
+script = ExtResource("13_oudfo")
 
 [node name="Label" type="Label" parent="UI/InventoryUI/Panel" unique_id=365687813]
 layout_mode = 1
@@ -186,3 +194,11 @@ offset_left = 15.0
 offset_top = 18.0
 offset_right = 55.0
 offset_bottom = 58.0
+
+[node name="ButtonUE" type="Button" parent="UI/InventoryUI/Panel" unique_id=2017273737]
+layout_mode = 0
+offset_left = 110.0
+offset_top = -39.0
+offset_right = 163.0
+offset_bottom = -8.0
+text = "Odłóż"

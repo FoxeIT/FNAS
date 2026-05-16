@@ -1,12 +1,14 @@
 extends Control
 
 @onready var item_list : VBoxContainer = $Panel/ItemList
+@onready var button_unequip = $Panel/ButtonUE
 
 var _hand_holder : Node3D = null
 
 func _ready() -> void:
 	visible = false
 	Inventory.inventory_changed.connect(_refresh)
+	button_unequip.pressed.connect(_unequip_item)
 
 func _find_hand_holder() -> void:
 	# Szuka HandHolder w całej scenie po nazwie
@@ -73,7 +75,7 @@ func _equip_item(p_name: String) -> void:
 	for child in _hand_holder.get_children():
 		child.queue_free()
 
-	var scene_path := Inventory.get_held_scene(p_name)
+	var scene_path = Inventory.get_held_scene(p_name)
 	if scene_path == "" or not ResourceLoader.exists(scene_path):
 		push_error("Scena nie istnieje: " + scene_path)
 		return
@@ -82,6 +84,17 @@ func _equip_item(p_name: String) -> void:
 	_hand_holder.add_child(instance)
 	instance.owner = _hand_holder
 
+	await get_tree().create_timer(0.1).timeout
+	visible = false
+	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
+
+func _unequip_item():
+	if _hand_holder == null:
+		_find_hand_holder()
+	if _hand_holder == null:
+		return
+	for child in _hand_holder.get_children():
+		child.queue_free()
 	await get_tree().create_timer(0.1).timeout
 	visible = false
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)

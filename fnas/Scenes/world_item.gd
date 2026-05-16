@@ -1,6 +1,6 @@
 extends Node3D
 
-@export var p_name  : String = "Przedmiot"
+@export var p_name  : String = "chuja"
 @export var p_icon  : String = ""
 @export var p_count : int    = 1
 @export var p_held  : String = "res://Scenes/wordlitem_held.tscn"
