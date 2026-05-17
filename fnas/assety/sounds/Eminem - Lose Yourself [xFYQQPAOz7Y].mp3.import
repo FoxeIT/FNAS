@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://tkcofhwxs7ff"
+path="res://.godot/imported/Eminem - Lose Yourself [xFYQQPAOz7Y].mp3-dbd209a1e2d51f0f448761600ad189b4.mp3str"
+
+[deps]
+
+source_file="res://assety/sounds/Eminem - Lose Yourself [xFYQQPAOz7Y].mp3"
+dest_files=["res://.godot/imported/Eminem - Lose Yourself [xFYQQPAOz7Y].mp3-dbd209a1e2d51f0f448761600ad189b4.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4
