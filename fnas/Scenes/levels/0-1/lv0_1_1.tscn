@@ -1,0 +1,127 @@
+[gd_scene format=3 uid="uid://lbnatfxi11lo"]
+
+[ext_resource type="Environment" uid="uid://bfa4ghyrsev0b" path="res://Scenes/levels/0-1/office.tres" id="1_46xmb"]
+[ext_resource type="PackedScene" uid="uid://bsptexusc8kw5" path="res://assety/office-0_1_1.blend" id="1_jlyih"]
+[ext_resource type="Script" uid="uid://b2bobtvtspdbq" path="res://Scenes/levels/0-1/control.gd" id="2_iu477"]
+[ext_resource type="Script" uid="uid://cha36cjnfcx3c" path="res://Scenes/levels/0-1/spot_light_3d.gd" id="3_h1jkg"]
+[ext_resource type="Script" uid="uid://v0u1us74yarl" path="res://Scenes/levels/0-1/omni_light_3d.gd" id="3_iuqns"]
+[ext_resource type="Script" uid="uid://daatjkyo7u1dg" path="res://Scenes/levels/0-1/label.gd" id="3_wgcla"]
+
+[sub_resource type="ViewportTexture" id="ViewportTexture_46xmb"]
+viewport_path = NodePath("SubViewport")
+
+[sub_resource type="ViewportTexture" id="ViewportTexture_wgcla"]
+viewport_path = NodePath("SubViewport")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_46xmb"]
+resource_local_to_scene = true
+albedo_texture = SubResource("ViewportTexture_46xmb")
+emission_enabled = true
+emission = Color(1, 1, 1, 1)
+emission_operator = 1
+emission_texture = SubResource("ViewportTexture_wgcla")
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_46xmb"]
+resource_local_to_scene = true
+material = SubResource("StandardMaterial3D_46xmb")
+
+[sub_resource type="ViewportTexture" id="ViewportTexture_h1jkg"]
+viewport_path = NodePath("SubViewport")
+
+[node name="Lv011" type="Node3D" unique_id=1384482556]
+
+[node name="Camera3D" type="Camera3D" parent="." unique_id=1740133374]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.1674037, 0)
+environment = ExtResource("1_46xmb")
+fov = 60.0
+
+[node name="Control" type="Control" parent="Camera3D" unique_id=1848887459]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 1153.0
+offset_bottom = 649.0
+script = ExtResource("2_iu477")
+
+[node name="Button" type="Button" parent="Camera3D/Control" unique_id=495356497]
+layout_mode = 0
+offset_left = 59.0
+offset_top = 34.0
+offset_right = 297.0
+offset_bottom = 616.0
+text = "left"
+metadata/_edit_use_anchors_ = true
+
+[node name="Button2" type="Button" parent="Camera3D/Control" unique_id=1896789646]
+layout_mode = 0
+offset_left = 879.0
+offset_top = 24.0
+offset_right = 1117.0
+offset_bottom = 606.0
+text = "right"
+
+[node name="office-0_1_1" parent="." unique_id=134768830 instance=ExtResource("1_jlyih")]
+
+[node name="OmniLight3D" type="SpotLight3D" parent="office-0_1_1" unique_id=17986889]
+transform = Transform3D(1, 0, 0, 0, 0.02225108, 0.9997525, 0, -0.9997525, 0.02225108, 0, 2.910603, -0.10349119)
+light_color = Color(1, 0.9529412, 0.83137256, 1)
+light_energy = 0.479
+light_indirect_energy = 1.865
+light_volumetric_fog_energy = 0.0
+light_size = 0.088
+spot_range = 10.602
+spot_angle = 69.46
+spot_angle_attenuation = 1.8025136
+script = ExtResource("3_h1jkg")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="office-0_1_1" unique_id=1386829090]
+transform = Transform3D(0.46, 0, 0, 0, -4.371139e-08, -0.26, 0, 1, -1.13649605e-08, 0, 1.0065988, -1.4506361)
+mesh = SubResource("PlaneMesh_46xmb")
+
+[node name="OmniLight3D" type="SpotLight3D" parent="office-0_1_1/MeshInstance3D" unique_id=382759626]
+transform = Transform3D(1, 0, 0, 0, -0.016510138, -0.9998637, 0, 0.9998637, -0.016510138, 0, -0.5001056, 0)
+light_energy = 3.553
+light_size = 0.285
+spot_range = 1.76
+spot_attenuation = -4.01
+spot_angle = 34.95
+spot_angle_attenuation = 3.6050093
+script = ExtResource("3_iuqns")
+
+[node name="Sprite2D" type="Sprite2D" parent="office-0_1_1/MeshInstance3D" unique_id=1595599777]
+visible = false
+position = Vector2(10754, -5940)
+texture = SubResource("ViewportTexture_h1jkg")
+
+[node name="SubViewport" type="SubViewport" parent="." unique_id=1225716004]
+size = Vector2i(920, 520)
+render_target_update_mode = 4
+
+[node name="Control" type="Control" parent="SubViewport" unique_id=342011725]
+layout_mode = 3
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -460.0
+offset_top = -260.0
+offset_right = 460.0
+offset_bottom = 260.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Label" type="Label" parent="SubViewport/Control" unique_id=416389760]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -460.0
+offset_top = -260.0
+offset_right = -323.0
+offset_bottom = -237.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "yoinky sploinky :3"
+script = ExtResource("3_wgcla")
