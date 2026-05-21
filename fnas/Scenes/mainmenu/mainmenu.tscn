@@ -4,7 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://cx01poi2yhuj3" path="res://assety/textures/worn_asphalt_ao_2k.jpg" id="1_m8kbx"]
 [ext_resource type="Environment" uid="uid://dcdroajb71khn" path="res://assety/mainmenuenv.tres" id="1_tudpt"]
 [ext_resource type="VideoStream" uid="uid://jx63gx0audx1" path="res://assety/27519-364430915.ogv" id="2_7eu7h"]
-[ext_resource type="Script" uid="uid://tvdrcu8r4gjg" path="res://Scenes/mainmenu/sizeadjuster.gd" id="2_78nvb"]
+[ext_resource type="Script" path="res://Scenes/mainmenu/sizeadjuster.gd" id="2_78nvb"]
 [ext_resource type="Texture2D" uid="uid://b2ljssfccm5gj" path="res://assety/textures/worn_asphalt_nor_gl_2k.png" id="2_bs6s4"]
 [ext_resource type="Texture2D" uid="uid://c13g8qosri4k5" path="res://assety/textures/worn_asphalt_rough_2k.png" id="2_it37i"]
 [ext_resource type="Texture2D" uid="uid://doq1k5rij0bsl" path="res://assety/textures/photo-static-texture-pattern.png" id="2_ny5vv"]
@@ -220,7 +220,7 @@ offset_right = 258.765
 offset_bottom = 63.625
 theme_override_font_sizes/normal_font_size = 16
 text = "Perfekcyjny Nonsens 2026
-JakubKwantowy, MintPixels, DjNiko"
+Foxe, MintPixels, Jakub Kwantowy"
 horizontal_alignment = 2
 vertical_alignment = 2
 script = ExtResource("2_78nvb")

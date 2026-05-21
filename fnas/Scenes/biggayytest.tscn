@@ -137,7 +137,7 @@ transform = Transform3D(-0.97942394, 0, -0.20181298, 0, 1, 0, 0.20181298, 0, -0.
 text = "prerss e u idiot"
 
 [node name="StaticBody3D5" type="StaticBody3D" parent="." unique_id=763701201]
-transform = Transform3D(0.34677976, 0, -3.0746891, 0, 5.2268143, 0, 12.193795, 0, 0.08744119, 8.637444, 24.931604, -1.8861659)
+transform = Transform3D(1.9501674, 0, -3.4789865, 0, 5.2268143, 0, 68.573616, 0, 0.098939024, 8.637444, 24.931604, -30.399086)
 physics_material_override = SubResource("PhysicsMaterial_xv8uw")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D5" unique_id=789966778]
@@ -150,7 +150,7 @@ mesh = SubResource("BoxMesh_wp7sn")
 skin = SubResource("Skin_rwruy")
 
 [node name="StaticBody3D6" type="StaticBody3D" parent="." unique_id=2092227764]
-transform = Transform3D(0.34677976, 0, -3.0746891, 0, 5.2268143, 0, 12.193795, 0, 0.08744119, 8.637444, 24.931604, 15.044403)
+transform = Transform3D(1.2195797, 0, -3.2947674, 0, 5.2268143, 0, 42.884003, 0, 0.09370001, 8.637444, 24.931604, 30.632103)
 physics_material_override = SubResource("PhysicsMaterial_xv8uw")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D6" unique_id=1234290574]
