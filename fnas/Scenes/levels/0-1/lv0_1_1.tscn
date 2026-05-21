@@ -4,7 +4,6 @@
 [ext_resource type="PackedScene" uid="uid://bsptexusc8kw5" path="res://assety/office-0_1_1.blend" id="1_jlyih"]
 [ext_resource type="Script" uid="uid://b2bobtvtspdbq" path="res://Scenes/levels/0-1/control.gd" id="2_iu477"]
 [ext_resource type="Script" uid="uid://cha36cjnfcx3c" path="res://Scenes/levels/0-1/spot_light_3d.gd" id="3_h1jkg"]
-[ext_resource type="Script" uid="uid://v0u1us74yarl" path="res://Scenes/levels/0-1/omni_light_3d.gd" id="3_iuqns"]
 [ext_resource type="Script" uid="uid://daatjkyo7u1dg" path="res://Scenes/levels/0-1/label.gd" id="3_wgcla"]
 
 [sub_resource type="ViewportTexture" id="ViewportTexture_46xmb"]
@@ -31,7 +30,7 @@ viewport_path = NodePath("SubViewport")
 [node name="Lv011" type="Node3D" unique_id=1384482556]
 
 [node name="Camera3D" type="Camera3D" parent="." unique_id=1740133374]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.1674037, 0)
+transform = Transform3D(-0.9862856, 0, -0.16504754, 0, 1, 0, 0.16504754, 0, -0.9862856, 0, 1.1674037, 0)
 environment = ExtResource("1_46xmb")
 fov = 60.0
 
@@ -85,7 +84,6 @@ spot_range = 1.76
 spot_attenuation = -4.01
 spot_angle = 34.95
 spot_angle_attenuation = 3.6050093
-script = ExtResource("3_iuqns")
 
 [node name="Sprite2D" type="Sprite2D" parent="office-0_1_1/MeshInstance3D" unique_id=1595599777]
 visible = false
