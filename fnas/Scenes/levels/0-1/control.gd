@@ -11,8 +11,8 @@ func _ready() -> void:
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	resettimer += delta
-	if resettimer > 2:
-		camera_3d.rotation_degrees.y = 0
+	#if resettimer > 2:
+		#camera_3d.rotation_degrees.y = 0
 
 func left() -> void:
 	camera_3d.rotation_degrees.y = 81.6

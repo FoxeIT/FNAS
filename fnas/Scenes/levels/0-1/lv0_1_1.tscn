@@ -2,9 +2,9 @@
 
 [ext_resource type="Environment" uid="uid://bfa4ghyrsev0b" path="res://Scenes/levels/0-1/office.tres" id="1_46xmb"]
 [ext_resource type="PackedScene" uid="uid://bsptexusc8kw5" path="res://assety/office-0_1_1.blend" id="1_jlyih"]
-[ext_resource type="Script" uid="uid://b2bobtvtspdbq" path="res://Scenes/levels/0-1/control.gd" id="2_iu477"]
+[ext_resource type="Script" uid="uid://c5ryjbjt42hp6" path="res://Scenes/levels/0-1/camera_3d.gd" id="2_mgkvv"]
 [ext_resource type="Script" uid="uid://cha36cjnfcx3c" path="res://Scenes/levels/0-1/spot_light_3d.gd" id="3_h1jkg"]
-[ext_resource type="Script" uid="uid://daatjkyo7u1dg" path="res://Scenes/levels/0-1/label.gd" id="3_wgcla"]
+[ext_resource type="Texture2D" uid="uid://de0bda3a5hoga" path="res://assety/textures/screen1.png" id="5_h1jkg"]
 
 [sub_resource type="ViewportTexture" id="ViewportTexture_46xmb"]
 viewport_path = NodePath("SubViewport")
@@ -30,33 +30,16 @@ viewport_path = NodePath("SubViewport")
 [node name="Lv011" type="Node3D" unique_id=1384482556]
 
 [node name="Camera3D" type="Camera3D" parent="." unique_id=1740133374]
-transform = Transform3D(-0.9862856, 0, -0.16504754, 0, 1, 0, 0.16504754, 0, -0.9862856, 0, 1.1674037, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.1674037, 0)
 environment = ExtResource("1_46xmb")
 fov = 60.0
+script = ExtResource("2_mgkvv")
 
-[node name="Control" type="Control" parent="Camera3D" unique_id=1848887459]
+[node name="Control" type="Control" parent="Camera3D" unique_id=631342241]
 layout_mode = 3
 anchors_preset = 0
-offset_right = 1153.0
-offset_bottom = 649.0
-script = ExtResource("2_iu477")
-
-[node name="Button" type="Button" parent="Camera3D/Control" unique_id=495356497]
-layout_mode = 0
-offset_left = 59.0
-offset_top = 34.0
-offset_right = 297.0
-offset_bottom = 616.0
-text = "left"
-metadata/_edit_use_anchors_ = true
-
-[node name="Button2" type="Button" parent="Camera3D/Control" unique_id=1896789646]
-layout_mode = 0
-offset_left = 879.0
-offset_top = 24.0
-offset_right = 1117.0
-offset_bottom = 606.0
-text = "right"
+offset_right = 40.0
+offset_bottom = 40.0
 
 [node name="office-0_1_1" parent="." unique_id=134768830 instance=ExtResource("1_jlyih")]
 
@@ -108,18 +91,14 @@ offset_bottom = 260.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="Label" type="Label" parent="SubViewport/Control" unique_id=416389760]
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -460.0
-offset_top = -260.0
-offset_right = -323.0
-offset_bottom = -237.0
-grow_horizontal = 2
-grow_vertical = 2
-text = "yoinky sploinky :3"
-script = ExtResource("3_wgcla")
+[node name="ColorRect" type="ColorRect" parent="SubViewport/Control" unique_id=1046157803]
+layout_mode = 0
+offset_right = 1000.0
+offset_bottom = 1000.0
+color = Color(0, 0, 0, 1)
+
+[node name="Screen1" type="Sprite2D" parent="SubViewport/Control" unique_id=1397998444]
+texture_filter = 1
+position = Vector2(480, 260)
+scale = Vector2(0.7, 0.7)
+texture = ExtResource("5_h1jkg")
