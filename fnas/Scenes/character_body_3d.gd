@@ -21,7 +21,9 @@ func _physics_process(delta: float) -> void:
 	var direction = local_destination.normalized()
 	if is_on_floor():
 		velocity = velocity * Vector3(0.99,1,0.99)
-	velocity += direction * SPEED * delta * 10 * Vector3(1,0.1,1)
+		velocity += direction * SPEED * delta * 10 * Vector3(1,1,1)
+	else:
+		velocity += direction * SPEED * delta * 10 * Vector3(1,0.1,1)
 	#print(direction.y)
 	#print(is_on_floor())
 	#print(player.position.y-destination.y)
@@ -37,6 +39,8 @@ func _physics_process(delta: float) -> void:
 	if not is_on_floor():
 		velocity += get_gravity() * delta
 	$Sprite3D.look_at(player.position+Vector3(0,3,0))
+	#if navigation_agent_3d.get_next_path_position().y > global_position.y-0.78:
+		#velocity.y+=2
 	move_and_slide()
 
 func _touched(body: Node3D):
