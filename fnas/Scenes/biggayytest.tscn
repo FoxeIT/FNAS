@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://dr3j2piclepk5"]
 
 [ext_resource type="PackedScene" uid="uid://m3uvedbq737d" path="res://Player.tscn" id="1_xv8uw"]
-[ext_resource type="Environment" uid="uid://dodbf8ogupn4c" path="res://assety/testenv.tres" id="2_rwruy"]
+[ext_resource type="Environment" uid="uid://bi880sl2t6ow0" path="res://dev_fullbright.tres" id="2_py3a3"]
 [ext_resource type="Texture2D" uid="uid://c7eipngnhajl3" path="res://assety/image.jpg" id="2_wp7sn"]
 [ext_resource type="Script" uid="uid://c7wwiclbeu0co" path="res://Scenes/door.gd" id="4_rdsfu"]
 [ext_resource type="PackedScene" uid="uid://bnmw3ahnlfyfd" path="res://Scenes/world_item.tscn" id="5_u8edb"]
@@ -9,6 +9,8 @@
 [ext_resource type="AudioStream" uid="uid://tkcofhwxs7ff" path="res://assety/sounds/Eminem - Lose Yourself [xFYQQPAOz7Y].mp3" id="7_uotyk"]
 [ext_resource type="Texture2D" uid="uid://cjeor2u154ug2" path="res://assety/textures/sikodem.png" id="8_2plt2"]
 [ext_resource type="AudioStream" uid="uid://cnsupr7ydknv8" path="res://assety/sounds/hush.mp3" id="9_i33rh"]
+[ext_resource type="Texture2D" uid="uid://0g8bxreg2021" path="res://assety/textures/icon.png" id="10_i33rh"]
+[ext_resource type="AudioStream" uid="uid://br6hs28dyc7jv" path="res://assety/sounds/kikodemsissers.wav" id="11_be8tk"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_xv8uw"]
 
@@ -93,7 +95,7 @@ shape = SubResource("BoxShape3D_xv8uw")
 mesh = SubResource("BoxMesh_rwruy")
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=867423709]
-environment = ExtResource("2_rwruy")
+environment = ExtResource("2_py3a3")
 
 [node name="Sprite3D" type="Sprite3D" parent="." unique_id=347965921]
 transform = Transform3D(0.47325814, 0, -0.8809238, 0, 1, 0, 0.8809238, 0, 0.47325814, 16.729559, 2.8258367, 0)
@@ -166,7 +168,7 @@ skin = SubResource("Skin_rwruy")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.3983412, 14.504402)
 
 [node name="CharacterBody3D" type="CharacterBody3D" parent="." unique_id=1959622214]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 28.137365, 1.7873698, -33.652756)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 28.137365, 281.84662, -33.652756)
 script = ExtResource("6_30gnx")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="CharacterBody3D" unique_id=1899218110]
@@ -175,6 +177,8 @@ shape = SubResource("CylinderShape3D_uotyk")
 
 [node name="Sprite3D" type="Sprite3D" parent="CharacterBody3D" unique_id=1815086687]
 transform = Transform3D(1.6, 0, 0, 0, 1.6, 0, 0, 0, 1.6, 0, 0.65861404, 0)
+flip_h = true
+billboard = 1
 texture = ExtResource("2_wp7sn")
 
 [node name="Area3D" type="Area3D" parent="CharacterBody3D" unique_id=1249331003]
@@ -201,7 +205,7 @@ doppler_tracking = 2
 parameters/looping = true
 
 [node name="CharacterBody3D2" type="CharacterBody3D" parent="." unique_id=725669513]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 19.704983, 1.7873698, 27.812006)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 19.704983, 281.84662, 27.812006)
 script = ExtResource("6_30gnx")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="CharacterBody3D2" unique_id=988065369]
@@ -210,6 +214,8 @@ shape = SubResource("CylinderShape3D_uotyk")
 
 [node name="Sprite3D" type="Sprite3D" parent="CharacterBody3D2" unique_id=1306195957]
 transform = Transform3D(1.6, 0, 0, 0, 1.6, 0, 0, 0, 1.6, 0, 0.65861404, 0)
+flip_h = true
+billboard = 1
 texture = ExtResource("8_2plt2")
 
 [node name="Area3D" type="Area3D" parent="CharacterBody3D2" unique_id=1757786391]
@@ -235,10 +241,47 @@ max_distance = 20.0
 doppler_tracking = 2
 parameters/looping = true
 
+[node name="CharacterBody3D3" type="CharacterBody3D" parent="." unique_id=1066141053]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 40.834602, 5.535494, 27.812006)
+script = ExtResource("6_30gnx")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="CharacterBody3D3" unique_id=957330276]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.46664977, 0)
+shape = SubResource("CylinderShape3D_uotyk")
+
+[node name="Sprite3D" type="Sprite3D" parent="CharacterBody3D3" unique_id=1078532057]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.65861404, 0)
+flip_h = true
+texture = ExtResource("10_i33rh")
+
+[node name="Area3D" type="Area3D" parent="CharacterBody3D3" unique_id=1500594100]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="CharacterBody3D3/Area3D" unique_id=2106933723]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.22748446, 0)
+shape = SubResource("SphereShape3D_30gnx")
+
+[node name="NavigationAgent3D" type="NavigationAgent3D" parent="CharacterBody3D3" unique_id=1790072141]
+path_max_distance = 1.81
+simplify_path = true
+debug_enabled = true
+debug_use_custom = true
+debug_path_custom_color = Color(1, 0, 1, 1)
+debug_path_custom_point_size = 9.3
+
+[node name="Music" type="AudioStreamPlayer3D" parent="CharacterBody3D3" unique_id=963763155]
+stream = ExtResource("11_be8tk")
+attenuation_model = 2
+volume_db = 22.857
+max_db = 3.37
+autoplay = true
+max_distance = 20.0
+doppler_tracking = 2
+
 [node name="NavigationRegion3D" type="NavigationRegion3D" parent="." unique_id=1610376931]
 navigation_mesh = SubResource("NavigationMesh_30gnx")
 
 [node name="mapmesh" type="Node3D" parent="NavigationRegion3D" unique_id=899778706]
+visible = false
 
 [node name="CSGBox3D" type="CSGBox3D" parent="NavigationRegion3D/mapmesh" unique_id=535158541]
 transform = Transform3D(1.189826, 0, -3.276055, 0, 5.2268143, 0, 41.837776, 0, 0.093167834, 8.637444, 10.278963, 30.360405)
