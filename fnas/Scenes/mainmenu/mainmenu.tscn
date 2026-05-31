@@ -4,7 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://cx01poi2yhuj3" path="res://assety/textures/worn_asphalt_ao_2k.jpg" id="1_m8kbx"]
 [ext_resource type="Environment" uid="uid://dcdroajb71khn" path="res://assety/mainmenuenv.tres" id="1_tudpt"]
 [ext_resource type="VideoStream" uid="uid://jx63gx0audx1" path="res://assety/27519-364430915.ogv" id="2_7eu7h"]
-[ext_resource type="Script" path="res://Scenes/mainmenu/sizeadjuster.gd" id="2_78nvb"]
+[ext_resource type="Script" uid="uid://tvdrcu8r4gjg" path="res://Scenes/mainmenu/sizeadjuster.gd" id="2_78nvb"]
 [ext_resource type="Texture2D" uid="uid://b2ljssfccm5gj" path="res://assety/textures/worn_asphalt_nor_gl_2k.png" id="2_bs6s4"]
 [ext_resource type="Texture2D" uid="uid://c13g8qosri4k5" path="res://assety/textures/worn_asphalt_rough_2k.png" id="2_it37i"]
 [ext_resource type="Texture2D" uid="uid://doq1k5rij0bsl" path="res://assety/textures/photo-static-texture-pattern.png" id="2_ny5vv"]
@@ -123,6 +123,54 @@ tracks/4/keys = {
 "update": 0,
 "values": [-80.0]
 }
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("Text1:visible")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("Text2:visible")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("Logo:visible")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/8/type = "value"
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/path = NodePath(".:modulate")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
 
 [sub_resource type="Animation" id="Animation_h5iq1"]
 resource_name = "intro"
@@ -204,6 +252,43 @@ tracks/5/keys = {
 _data = {
 &"RESET": SubResource("Animation_8rhrt"),
 &"intro": SubResource("Animation_h5iq1")
+}
+
+[sub_resource type="Animation" id="Animation_78nvb"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("ColorRect:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(0, 0, 0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_8hne6"]
+resource_name = "fadeoutffs"
+length = 2.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("ColorRect:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(0, 0, 0, 0), Color(0, 0, 0, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_j4ppk"]
+_data = {
+&"RESET": SubResource("Animation_78nvb"),
+&"fadeoutffs": SubResource("Animation_8hne6")
 }
 
 [node name="Control" type="Control" unique_id=640720380]
@@ -347,6 +432,7 @@ pitch_scale = 0.69
 autoplay = true
 
 [node name="StudioLogo" type="Node2D" parent="." unique_id=702866134]
+modulate = Color(1, 1, 1, 0)
 script = ExtResource("16_o1utx")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="StudioLogo" unique_id=176132318]
@@ -376,3 +462,13 @@ theme = ExtResource("1_6alau")
 text = "prezentuje"
 horizontal_alignment = 1
 vertical_alignment = 2
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=1744713391]
+visible = false
+layout_mode = 1
+offset_right = 40.0
+offset_bottom = 40.0
+color = Color(0, 0, 0, 0)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=950847911]
+libraries/ = SubResource("AnimationLibrary_j4ppk")

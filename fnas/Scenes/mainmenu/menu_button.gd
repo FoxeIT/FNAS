@@ -1,4 +1,5 @@
 extends Button
+@onready var animator: AnimationPlayer = $"../../AnimationPlayer"
 
 enum BtnActions {
 	NEWGAME, CONTINUE, EXIT
@@ -9,18 +10,20 @@ enum BtnActions {
 
 func _ready():
 	self.connect("pressed", _pressed)
+	animator.play("RESET")
 
 func _pressed():
 	if self.disabled: return
 	
 	match btn_type:
 		BtnActions.NEWGAME:
-			var tween = create_tween()
-			tween.connect("finished", _transition_end)
-			tween.tween_property(get_tree().current_scene, "modulate", Color(0, 0, 0), 2.0)
+			if !animator.animation_finished.is_connected(_transition_end):
+				$"../../ColorRect".visible = true
+				animator.animation_finished.connect(_transition_end)
+				animator.play("fadeoutffs")
 		
 		BtnActions.EXIT:
 			get_tree().quit(67)
 
-func _transition_end():
+func _transition_end(thisIsAbsolutelyNecessaryForSomeReason):
 	get_tree().change_scene_to_file("res://testy/asciiintro.tscn")

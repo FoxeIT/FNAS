@@ -23,7 +23,7 @@
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_5ncpa"]
 shader = ExtResource("7_dtqjt")
 
-[node name="CharacterBody3D" type="CharacterBody3D" unique_id=1152790506]
+[node name="CharacterBody3D" type="CharacterBody3D" unique_id=1152790506 groups=["player"]]
 script = ExtResource("1_xhfnw")
 metadata/_edit_vertical_guides_ = [185.0]
 

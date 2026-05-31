@@ -1,0 +1,11 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://b0ytmyndit3kg"]
+
+[ext_resource type="Texture2D" uid="uid://5vhw2ccea3qt" path="res://assety/headsikomonsta.png" id="1_4qqgx"]
+[ext_resource type="Texture2D" uid="uid://cf6e2a25tpl52" path="res://assety/headsikomonsta_emission.png" id="2_cgggb"]
+
+[resource]
+transparency = 1
+albedo_texture = ExtResource("1_4qqgx")
+emission_enabled = true
+emission_energy_multiplier = 5.0
+emission_texture = ExtResource("2_cgggb")

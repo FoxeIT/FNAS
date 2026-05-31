@@ -17,12 +17,14 @@ func _ready() -> void:
 	audioBus = AudioServer.get_bus_index("Master")
 	
 	#AudioServer.set_bus_volume_linear(audioBus, 0)
-	animator.connect("animation_finished", _anim_done)
+	animator.play("RESET")
+	animator.animation_finished.connect(_anim_done)
 	animator.play("intro")
 
 func _anim_done(_1):
 	#AudioServer.set_bus_volume_linear(audioBus, 1)
-	self.queue_free()
+	animator.animation_finished.disconnect(_anim_done)
+	self.visible = false
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta: float) -> void:
@@ -31,3 +33,4 @@ func _process(_delta: float) -> void:
 	text1.size = size
 	text2.size = size
 	colorRect.size = size
+	$"../ColorRect".size = size
