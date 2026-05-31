@@ -5,6 +5,9 @@
 [ext_resource type="Script" uid="uid://c5ryjbjt42hp6" path="res://Scenes/levels/0-1/camera_3d.gd" id="2_mgkvv"]
 [ext_resource type="Script" uid="uid://cha36cjnfcx3c" path="res://Scenes/levels/0-1/spot_light_3d.gd" id="3_h1jkg"]
 [ext_resource type="Texture2D" uid="uid://de0bda3a5hoga" path="res://assety/textures/screen1.png" id="5_h1jkg"]
+[ext_resource type="Texture2D" uid="uid://c7eipngnhajl3" path="res://assety/image.jpg" id="5_iu477"]
+[ext_resource type="Script" uid="uid://bmxv1i2g8bjd2" path="res://Scenes/levels/0-1/sprite_3d.gd" id="6_f7eqc"]
+[ext_resource type="Texture2D" uid="uid://cfhav0qdn2258" path="res://assety/textures/screen2.png" id="8_b13kr"]
 
 [sub_resource type="ViewportTexture" id="ViewportTexture_46xmb"]
 viewport_path = NodePath("SubViewport")
@@ -23,9 +26,6 @@ emission_texture = SubResource("ViewportTexture_wgcla")
 [sub_resource type="PlaneMesh" id="PlaneMesh_46xmb"]
 resource_local_to_scene = true
 material = SubResource("StandardMaterial3D_46xmb")
-
-[sub_resource type="ViewportTexture" id="ViewportTexture_h1jkg"]
-viewport_path = NodePath("SubViewport")
 
 [node name="Lv011" type="Node3D" unique_id=1384482556]
 
@@ -68,10 +68,10 @@ spot_attenuation = -4.01
 spot_angle = 34.95
 spot_angle_attenuation = 3.6050093
 
-[node name="Sprite2D" type="Sprite2D" parent="office-0_1_1/MeshInstance3D" unique_id=1595599777]
-visible = false
-position = Vector2(10754, -5940)
-texture = SubResource("ViewportTexture_h1jkg")
+[node name="Sprite3D" type="Sprite3D" parent="office-0_1_1" unique_id=677155465]
+transform = Transform3D(-8.742278e-09, 0, 0.2, 0, 0.2, 0, -0.2, 0, -8.742278e-09, -3.2791705, 0.9178967, -0.5800317)
+texture = ExtResource("5_iu477")
+script = ExtResource("6_f7eqc")
 
 [node name="SubViewport" type="SubViewport" parent="." unique_id=1225716004]
 size = Vector2i(920, 520)
@@ -102,3 +102,9 @@ texture_filter = 1
 position = Vector2(480, 260)
 scale = Vector2(0.7, 0.7)
 texture = ExtResource("5_h1jkg")
+
+[node name="Screen2" type="Sprite2D" parent="SubViewport/Control" unique_id=1723778300]
+texture_filter = 1
+position = Vector2(480, 260)
+scale = Vector2(0.7, 0.7)
+texture = ExtResource("8_b13kr")
