@@ -5,17 +5,26 @@ extends Node2D
 @onready var upgrade_now: Button = $Control/upgradeNow
 @onready var animation_player: AnimationPlayer = $"../jumpscares/AnimationPlayer"
 
-
-# Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	upgrade_now.pressed.connect(_on_upgrade_press)
 	camera_trigger.pressed.connect(_toggle_cameras)
 	animation_player.play("RESET")
+	upgrade_now.focus_neighbor_bottom = upgrade_now.get_path_to(camera_trigger)
+	camera_trigger.focus_neighbor_top = camera_trigger.get_path_to(upgrade_now)
 
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	control.size = get_viewport_rect().size
+
+func _input(event: InputEvent) -> void:
+	if event is InputEventMouseMotion or (event is InputEventMouseButton and event.pressed):
+		if upgrade_now.has_focus() or camera_trigger.has_focus():
+			upgrade_now.release_focus()
+	if event is InputEventJoypadButton and event.pressed:
+		if not upgrade_now.has_focus() and not camera_trigger.has_focus():
+			upgrade_now.grab_focus()
+	if event is InputEventJoypadMotion and abs(event.axis_value) > 0.15:
+		if not upgrade_now.has_focus() and not camera_trigger.has_focus():
+			upgrade_now.grab_focus()
 
 func _toggle_cameras():
 	animation_player.play("jumpscare_sikodem_1")

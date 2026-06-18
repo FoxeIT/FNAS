@@ -4,9 +4,8 @@ func _ready() -> void:
 	add_to_group("hand_holder")
 
 func _input(event: InputEvent) -> void:
-	if event is InputEventKey and event.pressed:
-		if event.keycode == KEY_G or event.keycode == KEY_Q:
-			_drop()
+	if event.is_action_pressed("drop_item"):
+		_drop()
 
 func _drop() -> void:
 	if get_child_count() == 0:

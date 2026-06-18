@@ -19,7 +19,7 @@ func _ready() -> void:
 func _input(event: InputEvent) -> void:
 	if not _player_nearby:
 		return
-	if event is InputEventKey and event.pressed and event.keycode == KEY_E:
+	if event.is_action_pressed("interact"):
 		_pick_up()
 
 func _pick_up() -> void:

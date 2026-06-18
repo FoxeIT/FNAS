@@ -9,4 +9,4 @@ var tween
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta: float) -> void:
 	tween = create_tween()
-	tween.tween_property(self, "light_energy", randf_range(0.2,0.3), 0.1)
+	tween.tween_property(self, "light_energy", randf_range(0.05,0.1), 0.1)

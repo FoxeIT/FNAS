@@ -597,7 +597,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0011680126, 0.005682111, 0
 [node name="OmniLight3D" type="SpotLight3D" parent="office-0_1_1" unique_id=17986889]
 transform = Transform3D(1, 0, 0, 0, 0.02225108, 0.9997525, 0, -0.9997525, 0.02225108, 0, 2.910603, -0.10349119)
 light_color = Color(1, 0.9529412, 0.83137256, 1)
-light_energy = 0.479
+light_energy = 0.089
 light_indirect_energy = 1.865
 light_volumetric_fog_energy = 0.0
 light_size = 0.088

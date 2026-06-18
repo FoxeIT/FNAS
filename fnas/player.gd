@@ -4,6 +4,8 @@ extends CharacterBody3D
 const SPEED               = 7.0
 const JUMP_VELOCITY       = 7.0
 const MOUSE_SENSITIVITY   = 0.003
+const JOY_SENSITIVITY    = 3.0
+const JOY_DEADZONE       = 0.15
 const STEPSOUND_DELAY_MIN = 0.4
 const STEPSOUND_DELAY_MAX = 0.5
 
@@ -56,26 +58,23 @@ func _input(event: InputEvent) -> void:
 		camera.rotation.x = clamp(camera.rotation.x, deg_to_rad(-89), deg_to_rad(89))
 		_mouse_delta = event.relative
 
-	if event is InputEventMouseButton:
+	if event is InputEventMouseButton and event.pressed:
 		Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
-		if event.pressed:
-			match event.button_index:
-				MOUSE_BUTTON_RIGHT:
-					uiNightshot.visible       = true
-					uiNightshotShader.visible = true
-					nightshotLight.visible    = true
-					flashLight.visible        = false
-					noiseFX.visible           = true
-					nsactivateemitter.play(0.15)
-		else:
-			match event.button_index:
-				MOUSE_BUTTON_RIGHT:
-					uiNightshot.visible       = false
-					uiNightshotShader.visible = false
-					nightshotLight.visible    = false
-					flashLight.visible        = true
-					noiseFX.visible           = false
-					nsactivateemitter.stop()
+
+	if event.is_action_pressed("nv_flashlight"):
+		uiNightshot.visible       = true
+		uiNightshotShader.visible = true
+		nightshotLight.visible    = true
+		flashLight.visible        = false
+		noiseFX.visible           = true
+		nsactivateemitter.play(0.15)
+	elif event.is_action_released("nv_flashlight"):
+		uiNightshot.visible       = false
+		uiNightshotShader.visible = false
+		nightshotLight.visible    = false
+		flashLight.visible        = true
+		noiseFX.visible           = false
+		nsactivateemitter.stop()
 
 func _physics_process(delta: float) -> void:
 	var size := get_viewport().get_visible_rect().size
@@ -109,6 +108,15 @@ func _physics_process(delta: float) -> void:
 	else:
 		velocity.x = move_toward(velocity.x, 0.0, SPEED / 10.0)
 		velocity.z = move_toward(velocity.z, 0.0, SPEED / 10.0)
+
+	var joy_cam := Vector2.ZERO
+	for device in Input.get_connected_joypads():
+		joy_cam = Vector2(Input.get_joy_axis(device, 2), Input.get_joy_axis(device, 3))
+		break
+	if joy_cam.length() > JOY_DEADZONE:
+		rotate_y(-joy_cam.x * JOY_SENSITIVITY * delta)
+		camera.rotate_x(-joy_cam.y * JOY_SENSITIVITY * delta)
+		camera.rotation.x = clamp(camera.rotation.x, deg_to_rad(-89), deg_to_rad(89))
 
 	if _step_delay > 0.0:
 		_step_delay -= delta

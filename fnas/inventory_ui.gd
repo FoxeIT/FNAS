@@ -19,7 +19,7 @@ func _find_hand_holder() -> void:
 		print("HandHolder znaleziony: ", _hand_holder.get_path())
 
 func _input(event: InputEvent) -> void:
-	if event is InputEventKey and event.pressed and event.keycode == KEY_I:
+	if event.is_action_pressed("inventory"):
 		visible = !visible
 		if visible:
 			_find_hand_holder()

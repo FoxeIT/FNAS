@@ -3,6 +3,7 @@
 [ext_resource type="FontFile" uid="uid://copch0q0mg70c" path="res://assety/JetBrainsMonoNL-Regular.ttf" id="1_6stln"]
 [ext_resource type="Script" uid="uid://qtc3ruep0xg" path="res://testy/asciiintro.gd" id="1_mlqhw"]
 [ext_resource type="Texture2D" uid="uid://ckh1y8erv6yuv" path="res://assety/textures/flashlight.png" id="1_y3imr"]
+[ext_resource type="Environment" uid="uid://dodbf8ogupn4c" path="res://assety/testenv.tres" id="2_ukbqd"]
 [ext_resource type="VideoStream" uid="uid://jx63gx0audx1" path="res://assety/27519-364430915.ogv" id="3_mlqhw"]
 [ext_resource type="PackedScene" uid="uid://7hbrudw5tija" path="res://assety/tv-poked.glb" id="3_wtwhr"]
 [ext_resource type="Texture2D" uid="uid://caevgyht3jxf0" path="res://assety/scanline.png" id="5_jh8n7"]
@@ -617,6 +618,7 @@ script = ExtResource("1_mlqhw")
 
 [node name="Camera3D" type="Camera3D" parent="." unique_id=718813993]
 transform = Transform3D(1, 0, 0, 0, 0.43339166, -0.90120566, 0, 0.90120566, 0.43339166, 0, 1.5324136, 0)
+environment = ExtResource("2_ukbqd")
 current = true
 fov = 88.7
 size = 2.0
