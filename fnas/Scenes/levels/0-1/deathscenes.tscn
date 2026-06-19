@@ -1,0 +1,233 @@
+[gd_scene format=3 uid="uid://evpwi8kmextp"]
+
+[ext_resource type="PackedScene" uid="uid://bsptexusc8kw5" path="res://assety/office-0_1_1.blend" id="1_jf5xx"]
+[ext_resource type="Environment" uid="uid://bfa4ghyrsev0b" path="res://Scenes/levels/0-1/office.tres" id="2_8wojp"]
+[ext_resource type="Texture2D" uid="uid://ckh1y8erv6yuv" path="res://assety/textures/flashlight.png" id="3_8wojp"]
+[ext_resource type="Material" uid="uid://b0ytmyndit3kg" path="res://assety/sikomonsta.tres" id="4_poaga"]
+[ext_resource type="Texture2D" uid="uid://cy7g1i5cxa3kk" path="res://assety/bodysikomonsta.png" id="5_o5gpo"]
+[ext_resource type="Script" uid="uid://ru4i0m42v1p1" path="res://Scenes/levels/0-1/label_ass.gd" id="6_o5gpo"]
+
+[sub_resource type="Animation" id="Animation_iaypw"]
+resource_name = "RESET"
+length = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite3D:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0.099999994),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0.029801965, 0, 0.0706408)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprite3D:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0.099999994),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, 0, 0)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Sprite3D:scale")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0.099999994),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(1, 1, 1)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Sprite3D2:position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0.099999994),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, 0, 0)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Sprite3D2:rotation")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0.099999994),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, 0, 0)]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("Sprite3D2:scale")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0.099999994),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_3i4x4"]
+resource_name = "idle_door"
+length = 2.0
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite3D2:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, 0, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprite3D2:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, 0, 0)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Sprite3D2:scale")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(1, 1, 1)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Sprite3D:position")
+tracks/3/interp = 0
+tracks/3/loop_wrap = false
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 0.05, 0.1, 0.29, 0.32, 0.34251922, 0.6, 0.70000005, 1, 1.0225192, 1.2666667, 1.2891859, 1.4551352, 1.5051352, 1.5551353, 1.9666667, 1.9891859),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector3(0.029801965, 0, 0.0706408), Vector3(0.029801965, 0.16094649, 0.07064104), Vector3(0.03, 0, 0.071), Vector3(0.03, 0, 0.071), Vector3(0.029999971, -0.12678564, 0.0710001), Vector3(0.03, 0, 0.071), Vector3(0.029999971, -0.12678564, 0.0710001), Vector3(0.03, 0, 0.071), Vector3(0.029999971, -0.12678564, 0.0710001), Vector3(0.03, 0, 0.071), Vector3(0.029999971, -0.12678564, 0.0710001), Vector3(0.03, 0, 0.071), Vector3(0.029801965, 0, 0.0706408), Vector3(0.029801965, 0.16094649, 0.07064104), Vector3(0.03, 0, 0.071), Vector3(0.029999971, -0.12678564, 0.0710001), Vector3(0.03, 0, 0.071)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Sprite3D:rotation")
+tracks/4/interp = 0
+tracks/4/loop_wrap = false
+tracks/4/keys = {
+"times": PackedFloat32Array(0, 0.29, 0.32, 0.34251922, 0.6, 0.70000005, 1, 1.0225192, 1.2666667, 1.2891859, 1.9666667, 1.9891859),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector3(0, 0, 0), Vector3(0, 0, 0), Vector3(-0.30936462, 0.14271712, -0.85966206), Vector3(0, 0, 0), Vector3(-0.30936462, 0.14271712, -0.85966206), Vector3(0, 0, 0), Vector3(-0.30936462, 0.14271712, -0.85966206), Vector3(0, 0, 0), Vector3(-0.30936462, 0.14271712, -0.85966206), Vector3(0, 0, 0), Vector3(-0.30936462, 0.14271712, -0.85966206), Vector3(0, 0, 0)]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("Sprite3D:scale")
+tracks/5/interp = 1
+tracks/5/loop_wrap = false
+tracks/5/keys = {
+"times": PackedFloat32Array(0, 0.29, 0.34251922, 0.70000005, 1.0225192, 1.2891859, 1.9891859),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector3(1, 1, 1), Vector3(1, 1, 1), Vector3(1, 1, 1), Vector3(1, 1, 1), Vector3(1, 1, 1), Vector3(1, 1, 1), Vector3(1, 1, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_w710t"]
+_data = {
+&"RESET": SubResource("Animation_iaypw"),
+&"idle_door": SubResource("Animation_3i4x4")
+}
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_tmc0k"]
+material = ExtResource("4_poaga")
+orientation = 2
+
+[node name="Node3D" type="Node3D" unique_id=788408558]
+
+[node name="office-0_1_1" parent="." unique_id=2032276470 instance=ExtResource("1_jf5xx")]
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=1005512]
+environment = ExtResource("2_8wojp")
+
+[node name="spawnLocations" type="Node3D" parent="." unique_id=1757785758]
+
+[node name="sikodemDeathPos" type="Marker3D" parent="spawnLocations" unique_id=479254994]
+transform = Transform3D(-0.27359977, 0.01657869, 0.96170074, -0.099217504, 0.9940312, -0.04536299, -0.95671266, -0.107828856, -0.27032185, 0, 0.662, -0.816)
+
+[node name="Camera3D" type="Camera3D" parent="." unique_id=1221117843]
+transform = Transform3D(-0.27281922, 0.016920324, 0.96191645, -0.099422306, 0.9939961, -0.045682814, -0.9569141, -0.108099096, -0.2694989, 0, 0.6618087, -0.8155001)
+fov = 56.6
+
+[node name="sikodemDeath" type="Node3D" parent="." unique_id=1824135975]
+
+[node name="SpotLight3D" type="SpotLight3D" parent="sikodemDeath" unique_id=1528849673]
+transform = Transform3D(-0.59468025, 0.07172175, 0.80075675, 0.015682988, 0.9968581, -0.07763911, -0.80380934, -0.03361219, -0.5939367, -0.6279751, 0.6600881, -1.364948)
+light_energy = 1.771
+light_projector = ExtResource("3_8wojp")
+shadow_enabled = true
+spot_angle = 45.006046
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="sikodemDeath" unique_id=957950089]
+root_node = NodePath("")
+libraries/ = SubResource("AnimationLibrary_w710t")
+
+[node name="Sprite3D" type="MeshInstance3D" parent="sikodemDeath" unique_id=618673073]
+transform = Transform3D(-0.42636642, 0.19877465, 0.88244, 0.4105795, 0.9117979, -0.0070089865, -0.8060001, 0.35932332, -0.47037283, -2.5531454, 1.2000002, 0.25105253)
+mesh = SubResource("PlaneMesh_tmc0k")
+
+[node name="Sprite3D2" type="Sprite3D" parent="sikodemDeath" unique_id=1902045029]
+transform = Transform3D(-0.41558254, 0, 0.90955544, 0, 1, 0, -0.90955544, 0, -0.41558254, -3.382874, 1.2, 0)
+shaded = true
+texture_filter = 0
+texture = ExtResource("5_o5gpo")
+
+[node name="Node2D" type="Node2D" parent="." unique_id=2096277224]
+
+[node name="Control" type="Control" parent="Node2D" unique_id=1070987821]
+layout_mode = 3
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Label" type="Label" parent="Node2D/Control" unique_id=1522513221]
+layout_mode = 1
+offset_right = 275.0
+offset_bottom = 289.0
+scale = Vector2(1e-05, 1)
+theme_override_colors/font_color = Color(1, 0, 0, 1)
+theme_override_font_sizes/font_size = 104
+text = "you 
+ded!!!"
+script = ExtResource("6_o5gpo")

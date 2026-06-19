@@ -6,6 +6,7 @@
 [resource]
 transparency = 1
 albedo_texture = ExtResource("1_4qqgx")
+albedo_texture_force_srgb = true
 emission_enabled = true
 emission_energy_multiplier = 5.0
 emission_texture = ExtResource("2_cgggb")
