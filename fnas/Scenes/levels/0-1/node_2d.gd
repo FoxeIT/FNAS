@@ -16,9 +16,13 @@ func _ready() -> void:
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	control.size = get_viewport_rect().size
+	if animation_player.current_animation == "deathSceneChange":
+		get_tree().change_scene_to_file("res://Scenes/levels/0-1/deathscenes.tscn")
 
 func _toggle_cameras():
+	animation_player.animation_set_next("jumpscare_sikodem_1", "deathSceneChange")
 	animation_player.play("jumpscare_sikodem_1")
+	
 
 func _on_upgrade_press():
 	$"../SubViewport/Control/Screen3".visible = true

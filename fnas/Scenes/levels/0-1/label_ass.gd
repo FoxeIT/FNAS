@@ -9,6 +9,8 @@ func _ready() -> void:
 	#twiin.tween_callback(self.queue_free) # Replace with function body.
 	#await get_tree().create_timer(1).timeout
 	#scale.x=1
+	await get_tree().create_timer(5).timeout
+	get_tree().change_scene_to_file("res://Scenes/mainmenu/mainmenu.tscn")
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:

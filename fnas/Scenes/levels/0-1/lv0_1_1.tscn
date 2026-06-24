@@ -366,6 +366,9 @@ tracks/12/keys = {
 "values": [true]
 }
 
+[sub_resource type="Animation" id="Animation_i16g4"]
+resource_name = "deathSceneChange"
+
 [sub_resource type="Animation" id="Animation_7e2v3"]
 resource_name = "jumpscare_sikodem_1"
 length = 1.9
@@ -529,6 +532,7 @@ tracks/12/keys = {
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_2xx2t"]
 _data = {
 &"RESET": SubResource("Animation_wrohb"),
+&"deathSceneChange": SubResource("Animation_i16g4"),
 &"jumpscare_sikodem_1": SubResource("Animation_7e2v3")
 }
 
