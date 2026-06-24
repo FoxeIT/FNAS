@@ -33,6 +33,12 @@ enabled=PackedStringArray("res://addons/terrain_3d/plugin.cfg")
 hand_holder=""
 player=""
 
+[importer_defaults]
+
+scene={
+&"blender/nodes/visible": 2
+}
+
 [input]
 
 ui_left={
