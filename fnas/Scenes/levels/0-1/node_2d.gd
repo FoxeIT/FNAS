@@ -20,8 +20,9 @@ func _process(delta: float) -> void:
 		get_tree().change_scene_to_file("res://Scenes/levels/0-1/deathscenes.tscn")
 
 func _toggle_cameras():
-	animation_player.animation_set_next("jumpscare_sikodem_1", "deathSceneChange")
-	animation_player.play("jumpscare_sikodem_1")
+	if animation_player.current_animation != "jumpscare_sikodem_1":
+		animation_player.animation_set_next("jumpscare_sikodem_1", "deathSceneChange")
+		animation_player.play("jumpscare_sikodem_1")
 	
 
 func _on_upgrade_press():
