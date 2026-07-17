@@ -4,15 +4,16 @@ importer="texture"
 type="CompressedTexture2D"
 uid="uid://gp12lyrocajr"
 path.s3tc="res://.godot/imported/rocky_terrain_02_rough_2k.png-2704c3330654eaee7f54df61685ef14c.s3tc.ctex"
+path.etc2="res://.godot/imported/rocky_terrain_02_rough_2k.png-2704c3330654eaee7f54df61685ef14c.etc2.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
+"imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
 }
 
 [deps]
 
 source_file="res://assety/textures/rocky_terrain_02_rough_2k.png"
-dest_files=["res://.godot/imported/rocky_terrain_02_rough_2k.png-2704c3330654eaee7f54df61685ef14c.s3tc.ctex"]
+dest_files=["res://.godot/imported/rocky_terrain_02_rough_2k.png-2704c3330654eaee7f54df61685ef14c.s3tc.ctex", "res://.godot/imported/rocky_terrain_02_rough_2k.png-2704c3330654eaee7f54df61685ef14c.etc2.ctex"]
 
 [params]
 

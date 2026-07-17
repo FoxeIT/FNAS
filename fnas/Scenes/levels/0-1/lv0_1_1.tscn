@@ -595,7 +595,7 @@ metadata/isControllable = true
 
 [node name="AudioListener3D" type="AudioListener3D" parent="Camera3D" unique_id=677036093]
 
-[node name="office-0_1_1" parent="." unique_id=1410820092 instance=ExtResource("1_jlyih")]
+[node name="office-0_1_1" parent="." unique_id=1150949538 instance=ExtResource("1_jlyih")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0011680126, 0.005682111, 0.0021378994)
 
 [node name="OmniLight3D" type="SpotLight3D" parent="office-0_1_1" unique_id=17986889]
@@ -740,3 +740,14 @@ libraries/ = SubResource("AnimationLibrary_2xx2t")
 [node name="officeLeft" type="Marker3D" parent="spawns" unique_id=1801360689]
 transform = Transform3D(0.39073107, 0, 0.92050487, 0, 1, 0, -0.92050487, 0, 0.39073107, -4.35, 1.2, 0)
 gizmo_extents = 0.2
+
+[node name="cameras" type="Node3D" parent="." unique_id=1620097908]
+transform = Transform3D(0.39073107, 0, 0.92050487, 0, 1, 0, -0.92050487, 0, 0.39073107, -4.35, 1.2, 0)
+
+[node name="officeHall" type="Camera3D" parent="cameras" unique_id=275681622]
+transform = Transform3D(0.38244176, 0, -0.9239797, 0, 1, 0, 0.9239797, 0, 0.38244176, -9.984113, 1.4135971, 1.6900234)
+fov = 49.980053
+
+[node name="officeHall2" type="Camera3D" parent="cameras" unique_id=78702615]
+transform = Transform3D(0.99970144, -0.0055375854, 0.023796353, 0, 0.97397596, 0.2266513, -0.024432177, -0.22658366, 0.97368515, 5.7581882, 1.6596847, 5.620385)
+fov = 49.980053
