@@ -4,15 +4,16 @@ importer="texture"
 type="CompressedTexture2D"
 uid="uid://ngdecpata301"
 path.s3tc="res://.godot/imported/worn_asphalt_diff_2k.jpg-fbb9a9ff7a927cc35ad2122a36ba643e.s3tc.ctex"
+path.etc2="res://.godot/imported/worn_asphalt_diff_2k.jpg-fbb9a9ff7a927cc35ad2122a36ba643e.etc2.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
+"imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
 }
 
 [deps]
 
 source_file="res://assety/textures/worn_asphalt_diff_2k.jpg"
-dest_files=["res://.godot/imported/worn_asphalt_diff_2k.jpg-fbb9a9ff7a927cc35ad2122a36ba643e.s3tc.ctex"]
+dest_files=["res://.godot/imported/worn_asphalt_diff_2k.jpg-fbb9a9ff7a927cc35ad2122a36ba643e.s3tc.ctex", "res://.godot/imported/worn_asphalt_diff_2k.jpg-fbb9a9ff7a927cc35ad2122a36ba643e.etc2.ctex"]
 
 [params]
 

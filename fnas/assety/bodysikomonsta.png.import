@@ -4,15 +4,16 @@ importer="texture"
 type="CompressedTexture2D"
 uid="uid://cy7g1i5cxa3kk"
 path.s3tc="res://.godot/imported/bodysikomonsta.png-2213f06309f5f5e3c4196baad51bedc3.s3tc.ctex"
+path.etc2="res://.godot/imported/bodysikomonsta.png-2213f06309f5f5e3c4196baad51bedc3.etc2.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
+"imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
 }
 
 [deps]
 
 source_file="res://assety/bodysikomonsta.png"
-dest_files=["res://.godot/imported/bodysikomonsta.png-2213f06309f5f5e3c4196baad51bedc3.s3tc.ctex"]
+dest_files=["res://.godot/imported/bodysikomonsta.png-2213f06309f5f5e3c4196baad51bedc3.s3tc.ctex", "res://.godot/imported/bodysikomonsta.png-2213f06309f5f5e3c4196baad51bedc3.etc2.ctex"]
 
 [params]
 
